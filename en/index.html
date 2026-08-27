@@ -1,0 +1,1013 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Polary — Strategy, Technology &amp; Data</title>
+    <meta
+      content="Polary brings strategy, technology and data together to organize processes, strengthen brands and turn business problems into efficient solutions."
+      name="description"
+    />
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("polary-theme");
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          const theme =
+            saved === "light" || saved === "dark"
+              ? saved
+              : prefersDark
+                ? "dark"
+                : "light";
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch (_) {}
+      })();
+    </script>
+    <link href="https://polary.com.br/en/" rel="canonical" />
+    <link href="https://polary.com.br/" hreflang="x-default" rel="alternate" />
+    <link href="https://polary.com.br/en/" hreflang="en" rel="alternate" />
+    <link href="https://polary.com.br/" hreflang="pt-BR" rel="alternate" />
+    <meta content="#f8faf9" name="theme-color" />
+    <meta content="light dark" name="color-scheme" />
+    <meta content="website" property="og:type" />
+    <meta content="en_US" property="og:locale" />
+    <meta content="https://polary.com.br/en/" property="og:url" />
+    <meta
+      content="Polary — Strategy, Technology &amp; Data"
+      property="og:title"
+    />
+    <meta
+      content="Data that guides. Brands that lead. Strategy, technology and data applied to real business problems."
+      property="og:description"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="../assets/css/reset.css" rel="stylesheet" />
+    <link href="../assets/css/site.css" rel="stylesheet" />
+    <link href="../assets/css/theme.css" rel="stylesheet" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Polary",
+        "url": "https://polary.com.br/en/",
+        "email": "contato@polary.com.br",
+        "description": "Strategy, technology and data to turn business problems into efficient solutions."
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header" data-header="">
+      <div class="container header-inner">
+        <a aria-label="Polary — home" class="brand" href="#inicio">
+          <span aria-hidden="true" class="brand-mark">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span>Polary</span>
+        </a>
+        <nav aria-label="Primary navigation" class="desktop-nav">
+          <a href="#solucoes">Solutions</a>
+          <a href="#processo">How we work</a>
+          <a href="#cases">Case Studies</a>
+          <a href="#sobre">About</a>
+        </nav>
+        <div class="header-tools">
+          <nav aria-label="Language" class="language-switcher">
+            <a href="../" hreflang="pt-BR" lang="pt-BR">PT</a
+            ><a
+              aria-current="page"
+              class="is-active"
+              href="./"
+              hreflang="en"
+              lang="en"
+              >EN</a
+            >
+          </nav>
+          <button
+            aria-label="Toggle color theme"
+            class="theme-toggle"
+            data-theme-toggle=""
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="theme-icon theme-icon--sun"
+              viewbox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="3.5"></circle>
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"
+              ></path></svg
+            ><svg
+              aria-hidden="true"
+              class="theme-icon theme-icon--moon"
+              viewbox="0 0 24 24"
+            >
+              <path
+                d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"
+              ></path>
+            </svg></button
+          ><a
+            class="button button--brand header-cta"
+            data-event="header_contact"
+            href="#contato"
+            >Talk to Polary</a
+          >
+        </div>
+        <button
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Open menu"
+          class="menu-toggle"
+          data-menu-toggle=""
+          type="button"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+      <div class="mobile-menu" data-mobile-menu="" hidden="" id="mobile-menu">
+        <nav aria-label="Mobile navigation" class="container mobile-nav">
+          <a href="#solucoes">Solutions</a>
+          <a href="#processo">How we work</a>
+          <a href="#cases">Case Studies</a>
+          <a href="#sobre">About</a>
+          <div class="mobile-preferences">
+            <span class="mobile-preferences-label">Language</span>
+            <div class="language-switcher language-switcher--mobile">
+              <a href="../" hreflang="pt-BR" lang="pt-BR">Português</a
+              ><a
+                aria-current="page"
+                class="is-active"
+                href="./"
+                hreflang="en"
+                lang="en"
+                >English</a
+              >
+            </div>
+          </div>
+          <a class="button button--brand" href="#contato">Talk to Polary</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section aria-labelledby="hero-title" class="hero" id="inicio">
+        <div aria-hidden="true" class="hero-ambient"></div>
+        <div class="container hero-inner">
+          <h1 data-reveal="" id="hero-title">
+            Data that guides.
+            <span>Brands that lead.</span>
+          </h1>
+          <p class="hero-copy" data-reveal="">
+            Strategy, technology and data working together to turn business
+            problems into simple, organized and efficient solutions.
+          </p>
+          <div class="hero-actions" data-reveal="">
+            <a
+              class="button button--brand button--large"
+              data-event="hero_contact"
+              href="#contato"
+              >Talk to Polary</a
+            >
+            <a
+              class="button button--ghost button--large"
+              data-event="hero_cases"
+              href="#cases"
+              >Explore our work <span aria-hidden="true">↘</span></a
+            >
+          </div>
+          <div
+            aria-label="Visual representation of Polary’s process"
+            class="hero-stage"
+            data-reveal=""
+          >
+            <div class="stage-toolbar">
+              <div class="stage-brand">
+                <span class="stage-brand-mark"></span> Polary / decision map
+              </div>
+              <div class="stage-status">
+                <span></span> diagnosis in progress
+              </div>
+            </div>
+            <div class="stage-body">
+              <aside aria-label="Process steps" class="stage-rail">
+                <button
+                  class="rail-item is-active"
+                  data-stage="analise"
+                  type="button"
+                >
+                  <span>01</span>Analyze
+                </button>
+                <button class="rail-item" data-stage="estrategia" type="button">
+                  <span>02</span>Structure
+                </button>
+                <button class="rail-item" data-stage="solucao" type="button">
+                  <span>03</span>Build
+                </button>
+                <button class="rail-item" data-stage="evolucao" type="button">
+                  <span>04</span>Evolve
+                </button>
+              </aside>
+              <div class="decision-map" data-stage-panel="">
+                <div class="map-heading">
+                  <div>
+                    <span class="meta-label">OPERATIONS MAP</span>
+                    <h2>Turn scattered signals into direction.</h2>
+                  </div>
+                  <span class="map-badge">Polary Core</span>
+                </div>
+                <div aria-hidden="true" class="map-canvas">
+                  <div class="signal signal--a">
+                    <span></span><b>Processes</b
+                    ><small>tasks, bottlenecks, flow</small>
+                  </div>
+                  <div class="signal signal--b">
+                    <span></span><b>Data</b
+                    ><small>sources, indicators, context</small>
+                  </div>
+                  <div class="signal signal--c">
+                    <span></span><b>Brand</b
+                    ><small>message, presence, direction</small>
+                  </div>
+                  <div class="connector connector--a"></div>
+                  <div class="connector connector--b"></div>
+                  <div class="connector connector--c"></div>
+                  <div class="core-node">
+                    <span class="core-orbit"></span>
+                    <strong>POLARY</strong>
+                    <small>analysis + strategy</small>
+                  </div>
+                  <div class="result-node result-node--a">
+                    <b>Clarity</b><small>what matters now</small>
+                  </div>
+                  <div class="result-node result-node--b">
+                    <b>Efficiency</b><small>less operational friction</small>
+                  </div>
+                  <div class="result-node result-node--c">
+                    <b>Decision</b><small>a clear next step</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="trust-row" data-reveal="">
+            <span>Strategy before technology</span>
+            <span aria-hidden="true" class="trust-separator"></span>
+            <span>Real case: Paulo Ramos</span>
+            <span aria-hidden="true" class="trust-separator"></span>
+            <span>AI when it creates real value</span>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="problems-title"
+        class="section section--soft"
+        id="problemas"
+      >
+        <div class="container editorial-grid">
+          <div class="section-intro sticky-intro" data-reveal="">
+            <p class="kicker">The problem</p>
+            <h2 id="problems-title">
+              Your company does not need more information.
+              <span>It needs clarity.</span>
+            </h2>
+            <p>
+              Before proposing technology, Polary looks for where the operation
+              loses time, context and direction.
+            </p>
+          </div>
+          <div class="problem-list" data-reveal="">
+            <article class="problem-row">
+              <span class="row-index">01</span>
+              <div>
+                <h3>Scattered data</h3>
+                <p>
+                  Information spread across different tools makes it harder to
+                  build a consistent view of the business.
+                </p>
+              </div>
+              <span class="row-signal">Fragmentation</span>
+            </article>
+            <article class="problem-row">
+              <span class="row-index">02</span>
+              <div>
+                <h3>Manual processes</h3>
+                <p>
+                  Repetitive tasks consume time and increase the risk of rework.
+                </p>
+              </div>
+              <span class="row-signal">Friction</span>
+            </article>
+            <article class="problem-row">
+              <span class="row-index">03</span>
+              <div>
+                <h3>Disconnected systems</h3>
+                <p>
+                  Operations lose context when each step lives in a different
+                  place.
+                </p>
+              </div>
+              <span class="row-signal">Disconnection</span>
+            </article>
+            <article class="problem-row">
+              <span class="row-index">04</span>
+              <div>
+                <h3>Brand without direction</h3>
+                <p>
+                  Inconsistent communication weakens recognition and makes the
+                  value proposition harder to understand.
+                </p>
+              </div>
+              <span class="row-signal">Noise</span>
+            </article>
+            <article class="problem-row">
+              <span class="row-index">05</span>
+              <div>
+                <h3>Decisions without data</h3>
+                <p>
+                  Without organized indicators, it becomes difficult to separate
+                  perception from evidence.
+                </p>
+              </div>
+              <span class="row-signal">Uncertainty</span>
+            </article>
+            <div class="problem-bridge">
+              <span>Polary connects these points.</span
+              ><span aria-hidden="true">→</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="solutions-title" class="section" id="solucoes">
+        <div class="container">
+          <div class="section-heading split-heading" data-reveal="">
+            <div>
+              <p class="kicker">Solutions</p>
+              <h2 id="solutions-title">
+                From strategy to implementation, without separating what needs
+                to work together.
+              </h2>
+            </div>
+            <p>
+              Three complementary capabilities to organize operations,
+              strengthen brand presence and turn data into better decisions.
+            </p>
+          </div>
+          <div class="solutions-bento" data-reveal="">
+            <article class="solution-card solution-card--large">
+              <div class="card-topline">
+                <span>02</span><span>Systems &amp; Technology</span>
+              </div>
+              <div aria-hidden="true" class="system-visual">
+                <div class="system-window">
+                  <div class="system-window-top">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="system-window-body">
+                    <div class="system-sidebar"></div>
+                    <div class="system-content">
+                      <div class="system-metric"></div>
+                      <div class="system-chart">
+                        <span></span><span></span><span></span><span></span
+                        ><span></span>
+                      </div>
+                      <div class="system-lines">
+                        <span></span><span></span><span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="solution-content">
+                <h3>
+                  Systems designed around how the operation actually works.
+                </h3>
+                <p>
+                  Web applications, dashboards, automations and integrations
+                  designed around the problem — not the tool.
+                </p>
+                <ul>
+                  <li>Custom web systems</li>
+                  <li>Dashboards &amp; indicators</li>
+                  <li>Automations &amp; integrations</li>
+                </ul>
+              </div>
+            </article>
+            <article class="solution-card solution-card--brand">
+              <div class="card-topline">
+                <span>01</span><span>Strategy &amp; Brand</span>
+              </div>
+              <div aria-hidden="true" class="brand-visual">
+                <span class="brand-line brand-line--1">direction</span>
+                <span class="brand-line brand-line--2">clarity</span>
+                <span class="brand-line brand-line--3">presence</span>
+              </div>
+              <div class="solution-content">
+                <h3>A brand with direction.</h3>
+                <p>
+                  Positioning, identity and digital presence to make the
+                  proposition clearer and more consistent.
+                </p>
+              </div>
+            </article>
+            <article class="solution-card solution-card--data">
+              <div class="card-topline">
+                <span>03</span><span>Data &amp; Intelligence</span>
+              </div>
+              <div aria-hidden="true" class="data-visual">
+                <div class="data-ring"><span>data</span></div>
+                <div class="data-pill data-pill--1">organize</div>
+                <div class="data-pill data-pill--2">analyze</div>
+                <div class="data-pill data-pill--3">decide</div>
+              </div>
+              <div class="solution-content">
+                <h3>Information that supports decisions.</h3>
+                <p>
+                  Organization, visualization, analysis and applied AI when it
+                  creates real business value.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="section-action" data-reveal="">
+            <a class="text-link" href="#contato"
+              >I want to discuss a problem <span aria-hidden="true">→</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="process-title"
+        class="section section--ink"
+        id="processo"
+      >
+        <div class="container">
+          <div class="section-heading section-heading--light" data-reveal="">
+            <p class="kicker">How we work</p>
+            <h2 id="process-title">
+              A clear sequence to reduce uncertainty before building.
+            </h2>
+            <p>
+              The process starts by understanding the business and ends with a
+              solution that can keep evolving.
+            </p>
+          </div>
+          <ol class="process-flow" data-reveal="">
+            <li>
+              <span>01</span>
+              <h3>Understand</h3>
+              <p>Business, operations, context and the real problem.</p>
+            </li>
+            <li>
+              <span>02</span>
+              <h3>Analyze</h3>
+              <p>Bottlenecks, opportunities, data and constraints.</p>
+            </li>
+            <li>
+              <span>03</span>
+              <h3>Structure</h3>
+              <p>Strategy, architecture and priorities.</p>
+            </li>
+            <li>
+              <span>04</span>
+              <h3>Build</h3>
+              <p>Solution, validation and implementation.</p>
+            </li>
+            <li>
+              <span>05</span>
+              <h3>Evolve</h3>
+              <p>Feedback, learning and continuous improvement.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section aria-labelledby="cases-title" class="section" id="cases">
+        <div class="container">
+          <div class="section-heading split-heading" data-reveal="">
+            <div>
+              <p class="kicker">Case Studies</p>
+              <h2 id="cases-title">Problems we help organize and solve.</h2>
+            </div>
+            <p>
+              Case studies are presented as context, decisions and solutions —
+              not as a gallery of screens.
+            </p>
+          </div>
+          <article class="case-feature" data-reveal="">
+            <div aria-hidden="true" class="case-visual">
+              <div class="barber-app">
+                <div class="barber-sidebar">
+                  <div class="barber-logo">PR</div>
+                  <span class="barber-nav is-active"></span
+                  ><span class="barber-nav"></span
+                  ><span class="barber-nav"></span
+                  ><span class="barber-nav"></span>
+                </div>
+                <div class="barber-main">
+                  <div class="barber-header">
+                    <span>Overview</span><span class="barber-avatar"></span>
+                  </div>
+                  <div class="barber-grid">
+                    <div class="barber-stat">
+                      <small>Schedule</small><strong>Today</strong><span></span>
+                    </div>
+                    <div class="barber-stat">
+                      <small>Clients</small><strong>Client base</strong
+                      ><span></span>
+                    </div>
+                    <div class="barber-stat">
+                      <small>Services</small><strong>Mix</strong><span></span>
+                    </div>
+                  </div>
+                  <div class="barber-table">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="case-copy">
+              <div class="case-meta">
+                <span>Paulo Ramos</span
+                ><span>System · UX · Data · Automation</span>
+              </div>
+              <h3>Management system for a barbershop.</h3>
+              <p>
+                Schedule, clients, services, products and financial information
+                organized in a simple, usable experience.
+              </p>
+              <div class="case-logic">
+                <div>
+                  <small>CONTEXT</small><span>Scattered information</span>
+                </div>
+                <div>
+                  <small>DECISION</small><span>Centralize operations</span>
+                </div>
+                <div><small>SOLUTION</small><span>Management system</span></div>
+                <div>
+                  <small>VALUE</small
+                  ><span>A clearer, centralized operation</span>
+                </div>
+              </div>
+              <a
+                class="text-link"
+                data-event="case_paulo_ramos"
+                href="cases/paulo-ramos/"
+                >View case study <span aria-hidden="true">→</span></a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+      <section
+        aria-labelledby="diff-title"
+        class="section section--soft"
+        id="diferenciais"
+      >
+        <div class="container editorial-grid editorial-grid--reverse">
+          <div class="differential-grid" data-reveal="">
+            <article class="diff-block diff-block--wide">
+              <span>01</span>
+              <h3>Strategy before technology</h3>
+              <p>We understand the problem first. The stack comes later.</p>
+            </article>
+            <article class="diff-block">
+              <span>02</span>
+              <h3>Simplicity</h3>
+              <p>Technical complexity should not become user complexity.</p>
+            </article>
+            <article class="diff-block">
+              <span>03</span>
+              <h3>Data</h3>
+              <p>
+                Structured information to support decisions, not just accumulate
+                reports.
+              </p>
+            </article>
+            <article class="diff-block">
+              <span>04</span>
+              <h3>Experience</h3>
+              <p>
+                Solutions adapted to the reality of the people who will use
+                them.
+              </p>
+            </article>
+            <article class="diff-block diff-block--accent">
+              <span>05</span>
+              <h3>Applied AI</h3>
+              <p>
+                Automation and intelligence when there is a real operational
+                gain.
+              </p>
+            </article>
+          </div>
+          <div class="section-intro sticky-intro" data-reveal="">
+            <p class="kicker">Principles</p>
+            <h2 id="diff-title">
+              Technology as the means. <span>Results as the direction.</span>
+            </h2>
+            <p>
+              Polary works to reduce noise, structure decisions and build
+              solutions that make sense for each company’s real context.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="ai-title" class="section ai-section" id="ia">
+        <div class="container ai-layout">
+          <div class="ai-copy" data-reveal="">
+            <p class="kicker">Artificial Intelligence</p>
+            <h2 id="ai-title">AI when it truly makes sense.</h2>
+            <p>
+              We use Artificial Intelligence as a capability multiplier —
+              automating tasks, organizing information and supporting processes
+              when it creates real business value.
+            </p>
+            <a class="text-link" data-event="ai_contact" href="#contato"
+              >Explore a real application <span aria-hidden="true">→</span></a
+            >
+          </div>
+          <div
+            aria-label="Visual example of an AI application"
+            class="ai-console"
+            data-reveal=""
+          >
+            <div class="console-top">
+              <span>POLARY / APPLIED AI</span
+              ><span class="console-live"
+                ><i></i> context before the model</span
+              >
+            </div>
+            <div class="console-body">
+              <div class="console-question">
+                <small>PROBLEM</small>
+                <p>
+                  The team copies service data into a spreadsheet and manually
+                  consolidates the report.
+                </p>
+              </div>
+              <div class="console-route">
+                <span>capture</span><b>→</b><span>structure</span><b>→</b
+                ><span>automate</span><b>→</b><span>measure</span>
+              </div>
+              <div class="console-result">
+                <small>APPLICATION</small
+                ><strong>Integrated workflow + validation + AI support</strong
+                ><span
+                  >AI is used where it reduces work or improves decisions.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-label="Technologies used"
+        class="tech-strip"
+        id="tecnologias"
+      >
+        <div class="container tech-strip-inner">
+          <span class="tech-label">Technology in service of the problem</span>
+          <div aria-label="Stack" class="tech-list">
+            <span>JavaScript</span><span>React</span><span>Node.js</span
+            ><span>Python</span><span>SQL</span><span>APIs</span><span>AI</span>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="about-title"
+        class="section section--ink"
+        id="sobre"
+      >
+        <div class="container about-layout">
+          <div class="about-copy" data-reveal="">
+            <p class="kicker">About Polary</p>
+            <h2 id="about-title">Every company needs direction.</h2>
+            <p class="about-lead">
+              Polary was created around the idea of turning data, strategy and
+              technology into direction for better decisions.
+            </p>
+            <p>
+              The name is inspired by Polaris — a point of reference. The
+              metaphor is not about space; it is about clarity amid many
+              possibilities.
+            </p>
+          </div>
+          <div class="about-panel" data-reveal="">
+            <div aria-hidden="true" class="compass-graphic">
+              <span class="compass-ring"></span
+              ><span class="compass-axis"></span
+              ><strong class="compass-north">N</strong
+              ><strong class="compass-south">S</strong><small>direction</small>
+            </div>
+            <div class="team-list">
+              <div><span>Gabriel</span><small>Development</small></div>
+              <div><span>Leonardo</span><small>Design</small></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="faq-title" class="section" id="faq">
+        <div class="container faq-layout">
+          <div class="section-intro sticky-intro" data-reveal="">
+            <p class="kicker">FAQ</p>
+            <h2 id="faq-title">Questions before we begin.</h2>
+            <p>
+              The first conversation is about understanding the context, the
+              need and the true size of the problem.
+            </p>
+          </div>
+          <div class="faq-list" data-reveal="">
+            <article class="faq-item">
+              <h3>
+                <button
+                  aria-controls="faq-a1"
+                  aria-expanded="false"
+                  type="button"
+                >
+                  <span>Does Polary work with companies in any industry?</span
+                  ><span aria-hidden="true" class="faq-icon">+</span>
+                </button>
+              </h3>
+              <div class="faq-answer" hidden="" id="faq-a1">
+                <p>
+                  Yes. The approach starts with the company’s problem and
+                  operations. Scope is defined after understanding the context.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3>
+                <button
+                  aria-controls="faq-a2"
+                  aria-expanded="false"
+                  type="button"
+                >
+                  <span>Do you build custom systems?</span
+                  ><span aria-hidden="true" class="faq-icon">+</span>
+                </button>
+              </h3>
+              <div class="faq-answer" hidden="" id="faq-a2">
+                <p>
+                  Yes. When a custom solution fits the problem, Polary can
+                  structure and develop systems, dashboards, automations and
+                  integrations.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3>
+                <button
+                  aria-controls="faq-a3"
+                  aria-expanded="false"
+                  type="button"
+                >
+                  <span>Can we start with a small project?</span
+                  ><span aria-hidden="true" class="faq-icon">+</span>
+                </button>
+              </h3>
+              <div class="faq-answer" hidden="" id="faq-a3">
+                <p>
+                  Yes. A smaller scope can be an efficient way to validate the
+                  solution before increasing the investment.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3>
+                <button
+                  aria-controls="faq-a4"
+                  aria-expanded="false"
+                  type="button"
+                >
+                  <span>Do you work with Artificial Intelligence?</span
+                  ><span aria-hidden="true" class="faq-icon">+</span>
+                </button>
+              </h3>
+              <div class="faq-answer" hidden="" id="faq-a4">
+                <p>
+                  Yes, when AI creates real value — for example, by automating
+                  tasks, organizing information or supporting analysis.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3>
+                <button
+                  aria-controls="faq-a5"
+                  aria-expanded="false"
+                  type="button"
+                >
+                  <span>Does Polary also work with visual identity?</span
+                  ><span aria-hidden="true" class="faq-icon">+</span>
+                </button>
+              </h3>
+              <div class="faq-answer" hidden="" id="faq-a5">
+                <p>
+                  Yes. Brand strategy, positioning, identity and digital
+                  presence are part of our Strategy &amp; Brand practice.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3>
+                <button
+                  aria-controls="faq-a6"
+                  aria-expanded="false"
+                  type="button"
+                >
+                  <span>How much does a project cost?</span
+                  ><span aria-hidden="true" class="faq-icon">+</span>
+                </button>
+              </h3>
+              <div class="faq-answer" hidden="" id="faq-a6">
+                <p>
+                  Each project is scoped according to the problem, scope and
+                  complexity. The first step is understanding the need before
+                  estimating the work.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="contact-title"
+        class="contact-section"
+        id="contato"
+      >
+        <div class="container contact-shell">
+          <div class="contact-copy" data-reveal="">
+            <p class="kicker">Next step</p>
+            <h2 id="contact-title">
+              Is there a problem in your operation?
+              <span>Let’s understand it.</span>
+            </h2>
+            <p>
+              Tell us what your company needs to improve. The first step is to
+              structure the problem — not sell a technology.
+            </p>
+            <div class="contact-direct">
+              <small>DIRECT CONTACT</small
+              ><a href="mailto:contato@polary.com.br">contato@polary.com.br</a>
+            </div>
+          </div>
+          <form
+            class="contact-form"
+            data-reveal=""
+            id="contact-form"
+            novalidate=""
+          >
+            <div class="form-row">
+              <div class="field">
+                <label for="nome">Name <span aria-hidden="true">*</span></label
+                ><input
+                  autocomplete="name"
+                  aria-describedby="nome-error"
+                  id="nome"
+                  name="nome"
+                  required=""
+                  type="text"
+                /><span
+                  aria-live="polite"
+                  class="field-error"
+                  id="nome-error"
+                ></span>
+              </div>
+              <div class="field">
+                <label for="empresa">Company</label
+                ><input
+                  autocomplete="organization"
+                  id="empresa"
+                  name="empresa"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="email"
+                  >E-mail <span aria-hidden="true">*</span></label
+                ><input
+                  autocomplete="email"
+                  aria-describedby="email-error"
+                  id="email"
+                  name="email"
+                  required=""
+                  type="email"
+                /><span
+                  aria-live="polite"
+                  class="field-error"
+                  id="email-error"
+                ></span>
+              </div>
+              <div class="field">
+                <label for="whatsapp">WhatsApp</label
+                ><input
+                  autocomplete="tel"
+                  id="whatsapp"
+                  name="whatsapp"
+                  type="tel"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label for="necessidade"
+                >What are you looking for?
+                <span aria-hidden="true">*</span></label
+              ><select
+                aria-describedby="necessidade-error"
+                id="necessidade"
+                name="necessidade"
+                required=""
+              >
+                <option value="">Select an option</option>
+                <option>System</option>
+                <option>Automation</option>
+                <option>Data</option>
+                <option>AI</option>
+                <option>Branding</option>
+                <option>Website</option>
+                <option>Other</option></select
+              ><span
+                aria-live="polite"
+                class="field-error"
+                id="necessidade-error"
+              ></span>
+            </div>
+            <div class="field">
+              <label for="mensagem">Message</label
+              ><textarea
+                id="mensagem"
+                name="mensagem"
+                placeholder="Briefly describe the problem or objective."
+                rows="5"
+              ></textarea>
+            </div>
+            <div aria-hidden="true" class="honeypot">
+              <label for="website">Do not fill this field</label
+              ><input
+                autocomplete="off"
+                id="website"
+                name="website"
+                tabindex="-1"
+                type="text"
+              />
+            </div>
+            <button
+              class="button button--brand button--large form-submit"
+              type="submit"
+            >
+              Send project <span aria-hidden="true">→</span>
+            </button>
+            <p class="form-note">
+              When you submit, your email application will open with the message
+              pre-filled.
+            </p>
+            <p aria-live="polite" class="form-status" id="form-status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="#inicio"
+            ><span aria-hidden="true" class="brand-mark"
+              ><span></span><span></span><span></span><span></span></span
+            ><span>Polary</span></a
+          >
+          <p>Data that guides, brands that lead.</p>
+        </div>
+        <div>
+          <h2>Navigation</h2>
+          <a href="#solucoes">Solutions</a><a href="#processo">How we work</a
+          ><a href="#cases">Case Studies</a><a href="#sobre">About</a>
+        </div>
+        <div>
+          <h2>Solutions</h2>
+          <a href="#solucoes">Strategy &amp; Brand</a
+          ><a href="#solucoes">Systems &amp; Technology</a
+          ><a href="#solucoes">Data &amp; Intelligence</a>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <a href="mailto:contato@polary.com.br">contato@polary.com.br</a
+          ><a href="#contato">Start a conversation</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span
+          >© <span id="current-year"></span> Polary. All rights reserved.</span
+        ><span>Strategy · Technology · Data</span>
+      </div>
+    </footer>
+    <script defer="True" src="../assets/js/theme.js"></script>
+    <script defer="" src="../assets/js/main.js"></script>
+  </body>
+</html>
