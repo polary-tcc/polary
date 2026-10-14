@@ -1,2 +1,17 @@
+# Robots.txt for Polary Website
+# See https://developers.google.com/search/docs/advanced/robots/create-robots-txt
+
+# User agents
 User-agent: *
-Allow: /
+Allow: /assets/
+Allow: /cases/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Sitemap
+Sitemap: https://polary.com.br/sitemap.xml
+
+# Crawl delay for aggressive bots
+# User-agent: *
+# Crawl-delay: 10
