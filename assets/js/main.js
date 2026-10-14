@@ -31,6 +31,15 @@
         bodyMessage: "Message",
         notProvided: "Not provided",
         noMessage: "No additional message.",
+        plans: {
+          presenca: "Presence",
+          gestao: "Management",
+          ecossistema: "Ecosystem",
+        },
+        proposalMessage: (plan) =>
+          `Hello! I found Polary through the website and I'm interested in the ${plan} plan. I'd like to talk about my company's needs and request a proposal.`,
+        diagnosisMessage:
+          "Hello! I found Polary through the website and I'd like to talk to understand which solutions make sense for my company.",
       }
     : {
         openMenu: "Abrir menu",
@@ -50,6 +59,15 @@
         bodyMessage: "Mensagem",
         notProvided: "Não informado",
         noMessage: "Sem mensagem adicional.",
+        plans: {
+          presenca: "Presença",
+          gestao: "Gestão",
+          ecossistema: "Ecossistema",
+        },
+        proposalMessage: (plan) =>
+          `Olá! Conheci a Polary pelo site e tenho interesse no plano ${plan}. Gostaria de conversar sobre as necessidades da minha empresa e solicitar uma proposta.`,
+        diagnosisMessage:
+          "Olá! Conheci a Polary pelo site e gostaria de conversar para entender quais soluções fazem sentido para a minha empresa.",
       };
 
   const setHeaderState = () => {
@@ -330,6 +348,80 @@
     window.location.href = mailto;
   });
 
+  const collapsePanel = (panel) => {
+    panel.classList.remove("is-open");
+    const hide = () => {
+      panel.removeEventListener("transitionend", hide);
+      if (!panel.classList.contains("is-open")) panel.hidden = true;
+    };
+    panel.addEventListener("transitionend", hide);
+    window.clearTimeout(panel._collapseTimer);
+    panel._collapseTimer = window.setTimeout(hide, 420);
+  };
+
+  const expandPanel = (panel) => {
+    window.clearTimeout(panel._collapseTimer);
+    panel.hidden = false;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => panel.classList.add("is-open"));
+    });
+  };
+
+  document.querySelectorAll(".plan-toggle").forEach((button) => {
+    button.addEventListener("click", () => {
+      const panel = document.getElementById(
+        button.getAttribute("aria-controls"),
+      );
+      if (!panel) return;
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!expanded));
+      const labelClosed = button.querySelector(
+        ".plan-toggle-label--closed",
+      );
+      const labelOpen = button.querySelector(".plan-toggle-label--open");
+      if (labelClosed) labelClosed.hidden = !expanded;
+      if (labelOpen) labelOpen.hidden = expanded;
+      if (expanded) collapsePanel(panel);
+      else expandPanel(panel);
+    });
+  });
+
+  const compareToggle = document.querySelector(".compare-toggle");
+  const comparePanel = document.getElementById("plan-compare-panel");
+  if (compareToggle && comparePanel) {
+    compareToggle.addEventListener("click", () => {
+      const expanded = compareToggle.getAttribute("aria-expanded") === "true";
+      compareToggle.setAttribute("aria-expanded", String(!expanded));
+      if (expanded) collapsePanel(comparePanel);
+      else expandPanel(comparePanel);
+    });
+  }
+
+  const focusMessage = () => {
+    window.setTimeout(() => {
+      form?.elements.mensagem?.focus();
+    }, prefersReducedMotion ? 0 : 480);
+  };
+
+  document.querySelectorAll("[data-plan-proposal]").forEach((link) => {
+    link.addEventListener("click", () => {
+      const planName = ui.plans[link.dataset.plan];
+      if (form && planName) {
+        form.elements.mensagem.value = ui.proposalMessage(planName);
+        focusMessage();
+      }
+    });
+  });
+
+  document.querySelectorAll("[data-plan-diagnosis]").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (form) {
+        form.elements.mensagem.value = ui.diagnosisMessage;
+        focusMessage();
+      }
+    });
+  });
+
   const year = document.getElementById("current-year");
   if (year) year.textContent = new Date().getFullYear();
 
@@ -337,10 +429,13 @@
     element.addEventListener("click", () => {
       const eventName = element.dataset.event;
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
+      const interaction = {
         event: "polary_interaction",
         interaction_name: eventName,
-      });
+      };
+      if (element.dataset.plan) interaction.interaction_plan =
+        element.dataset.plan;
+      window.dataLayer.push(interaction);
     });
   });
 })();

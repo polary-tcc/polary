@@ -1,4 +1,17 @@
 /* Theme + localization controls for Polary */
+
+.logo--white {
+  display: none;
+}
+
+html[data-theme="dark"] .logo--dark {
+  display: none;
+}
+
+html[data-theme="dark"] .logo--white {
+  display: block;
+}
+
 :root {
   --theme-bg: #ffffff;
   --theme-bg-soft: #f4f7f6;
@@ -62,13 +75,13 @@ body {
   justify-self: end;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .language-switcher {
   display: inline-flex;
   align-items: center;
-  padding: 3px;
+  padding: 4px;
   border: 1px solid var(--line);
   border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--surface) 84%, transparent);
@@ -76,8 +89,8 @@ body {
 }
 
 .language-switcher a {
-  min-width: 34px;
-  height: 30px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0 8px;
   display: inline-flex;
   align-items: center;
@@ -102,8 +115,8 @@ body {
 }
 
 .theme-toggle {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--line);
   border-radius: 50%;
   background: color-mix(in srgb, var(--surface) 88%, transparent);
@@ -147,14 +160,14 @@ html[data-theme="dark"] .theme-icon--moon {
 }
 
 .mobile-preferences {
-  margin: 10px 0 12px;
-  padding: 14px 4px 2px;
+  margin: 8px 0 16px;
+  padding: 16px 4px 0;
   border-top: 1px solid var(--line);
 }
 
 .mobile-preferences-label {
   display: block;
-  margin-bottom: 9px;
+  margin-bottom: 8px;
   color: var(--ink-500);
   font-size: 9px;
   font-weight: 700;
@@ -166,9 +179,11 @@ html[data-theme="dark"] .theme-icon--moon {
   width: fit-content;
 }
 
-.language-switcher--mobile a {
-  min-width: 82px;
-}
+  .language-switcher--mobile a {
+    min-width: 80px;
+    min-height: 44px;
+    font-size: 12px;
+  }
 
 /* Dark theme — semantic surface correction */
 html[data-theme="dark"] body {
@@ -513,7 +528,7 @@ html[data-theme="dark"] .case-next {
 
 @media (max-width: 760px) {
   .header-tools {
-    gap: 7px;
+    gap: 8px;
   }
 
   .header-tools>.language-switcher {
@@ -521,8 +536,8 @@ html[data-theme="dark"] .case-next {
   }
 
   .theme-toggle {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
   }
 
   .mobile-preferences {
@@ -538,12 +553,12 @@ html[data-theme="dark"] .case-next {
 
 @media (max-width: 420px) {
   .header-inner {
-    gap: 7px;
+    gap: 8px;
   }
 
   .theme-toggle {
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
   }
 }
 
@@ -614,6 +629,24 @@ html[data-theme="dark"] .theme-toggle:hover {
 
 html[data-theme="dark"] .language-switcher a.is-active {
   box-shadow: 0 0 0 1px rgba(79, 124, 255, .28) inset;
+}
+
+html[data-theme="dark"] .plan-card {
+  background: #0e1a21;
+}
+
+html[data-theme="dark"] .plan-card--featured {
+  background: linear-gradient(180deg, rgba(37, 99, 235, .10) 0%, #0e1a21 100%);
+  border-color: rgba(37, 99, 235, .45);
+}
+
+html[data-theme="dark"] .compare-table thead th.is-featured {
+  color: #8fb2ff;
+}
+
+html[data-theme="dark"] .compare-toggle:hover,
+html[data-theme="dark"] .compare-toggle:focus-visible {
+  color: #8fb2ff;
 }
 
 html[data-theme="dark"] .circle-topic{

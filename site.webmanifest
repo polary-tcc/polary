@@ -1,0 +1,26 @@
+{
+  "name": "Polary - Estratégia, Tecnologia e Dados",
+  "short_name": "Polary",
+  "description": "Consultoria especializada em estratégia, tecnologia e dados para PMEs e startups.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "assets/images/site/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/site/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/site/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ]
+}
