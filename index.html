@@ -132,9 +132,9 @@
      <a href="#processo">
       Como trabalhamos
      </a>
-     <a href="#cases">
-      Cases
-     </a>
+<a href="#cases">
+      Casos
+    </a>
      <a href="#sobre">
       Sobre
      </a>
@@ -265,7 +265,7 @@
     </div>
    </section>
    <section aria-labelledby="problems-title" class="section section--soft" id="problemas">
-    <div class="container editorial-grid">
+    <div class="container">
      <div class="section-intro sticky-intro" data-reveal="">
       <p class="kicker">
        O problema
@@ -800,7 +800,7 @@
     </div>
    </section>
    <section aria-labelledby="diff-title" class="section section--soft" id="diferenciais">
-    <div class="container editorial-grid editorial-grid--reverse">
+    <div class="container">
      <div class="differential-grid" data-reveal="">
       <article class="diff-block diff-block--wide">
        <span>
@@ -957,9 +957,6 @@
    </section>
    <section aria-label="Tecnologias utilizadas" class="tech-strip" id="tecnologias">
     <div class="container tech-strip-inner">
-     <span class="tech-label">
-      Tecnologia a serviço do problema
-     </span>
      <div aria-label="Stack" class="tech-list">
       <span>
        Automação
@@ -984,6 +981,65 @@
    </section>
    <section aria-labelledby="about-title" class="section section--ink" id="sobre">
     <div class="container about-layout">
+     <div class="about-header">
+      <div class="header-inner">
+       <a aria-label="Polary — início" class="brand" href="#inicio">
+        <div class="logo">
+          <img class="logo--dark" src="assets/images/logos/logo-exp-dark.svg" alt="">
+          <img class="logo--white" src="assets/images/logos/logo-exp-white.svg" alt="">
+         </div>
+        </a>
+       <nav aria-label="Navegação principal" class="desktop-nav">
+        <a href="#solucoes">Soluções</a>
+        <a href="#processo">Como trabalhamos</a>
+        <a href="#cases">Casos</a>
+        <a href="#sobre">Sobre</a>
+       </nav>
+       <span class="tech-label-subtle">Tecnologia a serviço do problema</span>
+       <div class="header-tools">
+        <nav aria-label="Idioma" class="language-switcher">
+         <a
+           aria-current="page"
+           class="is-active"
+           href="./"
+           hreflang="pt-BR"
+           lang="pt-BR"
+           >PT</a
+         ><a href="en/" hreflang="en" lang="en">EN</a>
+        </nav>
+        <button
+          aria-label="Alternar tema de cor"
+          class="theme-toggle"
+          data-theme-toggle=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="theme-icon theme-icon--sun"
+            viewbox="0 0 24 24"
+          >
+            <circle cx="12" cy="12" r="3.5"></circle>
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"
+            ></path></svg
+          ><svg
+            aria-hidden="true"
+            class="theme-icon theme-icon--moon"
+            viewbox="0 0 24 24"
+          >
+            <path
+              d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"
+            ></path></svg></button
+        >
+        <a
+          class="button button--brand header-cta"
+          data-event="header_contact"
+          href="#contato"
+          >Falar com a Polary</a
+        >
+       </div>
+      </div>
+     </div>
      <div class="about-copy" data-reveal="">
       <p class="kicker">
        Sobre a Polary
@@ -1010,8 +1066,14 @@
        <strong class="compass-north">
         N
        </strong>
+       <strong class="compass-east">
+        E
+       </strong>
        <strong class="compass-south">
         S
+       </strong>
+       <strong class="compass-west">
+        O
        </strong>
       </div>
       <div class="team-list">
@@ -1019,9 +1081,13 @@
         <span>
          Gabriel
         </span>
-        <small>
-         Desenvolvimento
-        </small>
+       </div>
+      <div class="team-item">
+         <span class="team-avatar">GS</span>
+        <div>
+         <span class="team-name">Gabriel</span>
+         <small>Desenvolvimento</small>
+        </div>
        </div>
        <div>
         <span>
@@ -1157,7 +1223,8 @@
         <p>
          Cada projeto é dimensionado conforme problema, escopo e
                   complexidade. O primeiro passo é entender a necessidade antes
-                  de estimar o trabalho.
+                  de estimar o trabalho. Orçamento sob medida após a
+                  conversa inicial.
         </p>
        </div>
       </article>
@@ -1255,8 +1322,11 @@
       <div class="field">
        <label for="mensagem">
         Mensagem
+        <span aria-hidden="true">
+         *
+        </span>
        </label>
-       <textarea id="mensagem" maxlength="3000" name="mensagem" placeholder="Descreva brevemente o problema ou objetivo." rows="5"></textarea>
+       <textarea id="mensagem" maxlength="3000" name="mensagem" placeholder="Descreva brevemente o problema ou objetivo." rows="5" required></textarea>
       </div>
       <div aria-hidden="true" class="honeypot">
        <label for="website">
@@ -1299,9 +1369,9 @@
      <a href="#processo">
       Como trabalhamos
      </a>
-     <a href="#cases">
-      Cases
-     </a>
+<a href="#cases">
+      Casos
+    </a>
      <a href="#sobre">
       Sobre
      </a>
