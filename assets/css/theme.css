@@ -66,6 +66,16 @@ html[data-theme="dark"] {
   color-scheme: dark;
 }
 
+html[data-theme="light"] body {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+}
+
+html[data-theme="dark"] body {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+}
+
 body {
   transition: background-color var(--base) var(--ease), color var(--base) var(--ease);
 }

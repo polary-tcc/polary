@@ -74,12 +74,6 @@
 }
 
 /* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px; /* Compensa o header fixo */
@@ -122,6 +116,24 @@ img {
   width: var(--container);
   margin-inline: auto;
   padding-inline: var(--space-4);
+}
+
+/* Skip link (acessibilidade) */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 0;
+  z-index: 10000;
+  padding: 8px 16px;
+  background: var(--brand-blue);
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: top var(--fast) var(--ease);
+}
+
+.skip-link:focus {
+  top: 24px;
 }
 
 /* Header */
@@ -468,56 +480,6 @@ img {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-}
-
-/* Elemento visual do hero - dashboard simplificado */
-.hero-visual {
-  margin-top: 32px;
-  height: 200px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--surface-soft);
-  border: 1px solid var(--line);
-}
-
-.visual-dashboard {
-  height: 100%;
-  display: flex;
-  padding: 24px;
-  gap: 20px;
-}
-
-.visual-chart {
-  flex: 2;
-  display: flex;
-  gap: 8px;
-}
-
-.chart-bar {
-  flex: 1;
-  background: var(--brand-blue);
-  border-radius: 4px;
-  transition: height 0.5s ease;
-}
-
-.chart-bar:nth-child(1) { height: 20%; }
-.chart-bar:nth-child(2) { height: 50%; }
-.chart-bar:nth-child(3) { height: 30%; }
-.chart-bar:nth-child(4) { height: 60%; }
-.chart-bar:nth-child(5) { height: 40%; }
-
-.visual-data-points {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.point {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--brand-blue);
 }
 
 /* Trust row */
@@ -1047,93 +1009,6 @@ img {
   line-height: 1.4;
 }
 
-/* Prova Social */
-#prova-social {
-  background: var(--surface-soft);
-}
-
-#prova-social .section-heading {
-  margin-bottom: 32px;
-}
-
-#prova-social .section-heading h2 {
-  color: var(--ink-950);
-}
-
-.social-proof-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
-  margin-bottom: 40px;
-}
-
-.social-proof-item {
-  text-align: center;
-  padding: 24px;
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
-}
-
-.social-proof-number {
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--brand-blue);
-  margin-bottom: 8px;
-}
-
-.social-proof-label {
-  font-size: 16px;
-  color: var(--ink-600);
-}
-
-/* Depoimentos */
-.social-proof-testimonials {
-  display: grid;
-  gap: 24px;
-}
-
-.testimonial {
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  border: 1px solid var(--line);
-  position: relative;
-}
-
-.testimonial::before {
-  content: '"';
-  font-size: 48px;
-  color: var(--brand-blue);
-  opacity: 0.2;
-  position: absolute;
-  top: 16px;
-  left: 24px;
-}
-
-.testimonial p {
-  margin: 0 0 24px 0;
-  color: var(--ink-600);
-  font-size: 18px;
-  line-height: 1.7;
-  position: relative;
-  padding-left: 16px;
-}
-
-.testimonial footer {
-  display: flex;
-  justify-content: space-between;
-  font-size: 16px;
-}
-
-.testimonial footer strong {
-  color: var(--ink-950);
-  font-weight: 600;
-}
-
-.testimonial footer span {
-  color: var(--ink-500);
-}
 
 /* Sobre */
 .about-layout {
