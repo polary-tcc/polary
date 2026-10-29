@@ -19,7 +19,7 @@
 
   const updateThemeColor = (theme) => {
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', theme === 'dark' ? '#071015' : '#f8faf9');
+    if (meta) meta.setAttribute('content', theme === 'dark' ? '#071015' : '#ffffff');
   };
 
   const updateButtons = (theme) => {

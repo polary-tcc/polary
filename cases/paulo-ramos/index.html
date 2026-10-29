@@ -1,83 +1,415 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Estudo de Caso Paulo Ramos — Polary</title>
-<meta content="Estudo de caso Paulo Ramos: um sistema de gestão desenhado para organizar agenda, clientes, serviços, produtos e informações financeiras em uma experiência simples e utilizável." name="description"/>
-<script>(() => { try { const saved = localStorage.getItem('polary-theme'); const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches; const theme = saved === 'light' || saved === 'dark' ? saved : (prefersDark ? 'dark' : 'light'); document.documentElement.dataset.theme = theme; document.documentElement.style.colorScheme = theme; } catch (_) {} })();</script><link href="https://polary.com.br/cases/paulo-ramos/" rel="canonical"/><link href="https://polary.com.br/cases/paulo-ramos/" hreflang="x-default" rel="alternate"/><link href="https://polary.com.br/en/cases/paulo-ramos/" hreflang="en" rel="alternate"/><link href="https://polary.com.br/cases/paulo-ramos/" hreflang="pt-BR" rel="alternate"/>
-<meta content="#f8faf9" name="theme-color"/>
-<meta content="light dark" name="color-scheme"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="../../assets/css/reset.css" rel="stylesheet"/>
-<link href="../../assets/css/site.css" rel="stylesheet"/><link href="../../assets/css/theme.css" rel="stylesheet"/>
-</head>
-<body>
-<header class="site-header is-scrolled" data-header="">
-<div class="container header-inner">
-<a aria-label="Polary — início" class="brand" href="../#inicio"><img class="logo--dark" src="assets/images/logos/logo-exp-dark.svg" alt="Polary" width="auto" height="24" /><span>Polary</span></a>
-<nav aria-label="Navegação principal" class="desktop-nav"><a href="../#solucoes">Soluções</a><a href="../#processo">Como trabalhamos</a><a href="../#cases">Casos</a><a href="../#sobre">Sobre</a></nav>
-<div class="header-tools"><nav aria-label="Idioma" class="language-switcher"><a aria-current="page" class="is-active" href="./" hreflang="pt-BR" lang="pt-BR">PT</a><a href="../../en/cases/paulo-ramos/" hreflang="en" lang="en">EN</a></nav><button aria-label="Alternar tema de cor" class="theme-toggle" data-theme-toggle="" type="button"><svg aria-hidden="true" class="theme-icon theme-icon--sun" viewbox="0 0 24 24"><circle cx="12" cy="12" r="3.5"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path></svg><svg aria-hidden="true" class="theme-icon theme-icon--moon" viewbox="0 0 24 24"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"></path></svg></button><a class="button button--brand header-cta" href="../#contato">Falar com a Polary</a></div><button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu" class="menu-toggle" data-menu-toggle="" type="button"><span></span><span></span></button>
-</div>
-<div class="mobile-menu" data-mobile-menu="" hidden="" id="mobile-menu"><nav aria-label="Navegação mobile" class="container mobile-nav"><a href="../#solucoes">Soluções</a><a href="../#processo">Como trabalhamos</a><a href="../#cases">Casos</a><a href="../#sobre">Sobre</a><div class="mobile-preferences"><span class="mobile-preferences-label">Idioma</span><div class="language-switcher language-switcher--mobile"><a aria-current="page" class="is-active" href="./" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../en/cases/paulo-ramos/" hreflang="en" lang="en">English</a></div></div><a class="button button--brand" href="../#contato">Falar com a Polary</a></nav></div>
-</header>
-<main class="case-page">
-<section class="case-hero">
-<div class="container case-hero-grid">
-<div data-reveal="">
-<a class="case-back" href="../#cases">← Voltar aos cases</a>
-<p class="kicker">Estudo de Caso · Paulo Ramos</p>
-<h1>Organize a operação antes de adicionar complexidade.</h1>
-<p class="case-hero-copy">Um sistema de gestão que centraliza agenda, clientes, serviços, produtos e informações financeiras em uma experiência simples e utilizável.</p>
-<div class="case-tags"><span>Sistema</span><span>UX</span><span>Dados</span><span>Automação</span></div>
-</div>
-<div class="case-hero-panel" data-reveal="">
-<div><small>CLIENTE</small><strong>Paulo Ramos</strong></div>
-<div><small>TIPO</small><strong>Sistema de gestão</strong></div>
-<div><small>FOCO</small><strong>Organização operacional</strong></div>
-<div><small>ABORDAGEM</small><strong>Problema → estrutura → sistema</strong></div>
-</div>
-</div>
-</section>
-<section class="case-showcase-section">
-<div class="container">
-<div aria-label="Representação visual do sistema Paulo Ramos" class="case-showcase" data-reveal="">
-<div class="barber-app barber-app--large">
-<div class="barber-sidebar"><div class="barber-logo">PR</div><span class="barber-nav is-active"></span><span class="barber-nav"></span><span class="barber-nav"></span><span class="barber-nav"></span></div>
-<div class="barber-main"><div class="barber-header"><span>Visão geral da operação</span><span class="barber-avatar"></span></div><div class="barber-grid"><div class="barber-stat"><small>Agenda</small><strong>Hoje</strong><span></span></div><div class="barber-stat"><small>Clientes</small><strong>Base</strong><span></span></div><div class="barber-stat"><small>Serviços</small><strong>Mix</strong><span></span></div></div><div class="barber-table"><span></span><span></span><span></span><span></span></div></div>
-</div>
-</div>
-</div>
-</section>
-<section class="section case-story-section">
-<div class="container case-story">
-<aside class="case-story-nav" data-reveal=""><span>01</span><span>Contexto</span><span>02</span><span>Diagnóstico</span><span>03</span><span>Estratégia</span><span>04</span><span>Solução</span><span>05</span><span>Resultado</span></aside>
-<div class="case-story-content">
-<article data-reveal=""><p class="kicker">01 · Contexto</p><h2>O ponto de partida.</h2><p>O projeto começou com a necessidade de organizar informações críticas da operação da barbearia em uma experiência centralizada, evitando que rotinas importantes permanecessem espalhadas.</p></article>
-<article data-reveal=""><p class="kicker">02 · Diagnóstico</p><h2>O problema não era "falta de tecnologia".</h2><p>Antes de pensar na interface, a prioridade foi entender quais informações precisavam se conectar: agenda, clientes, serviços, produtos e dados financeiros. O sistema deveria reduzir atrito, não criar mais uma camada de complexidade.</p></article>
-<article data-reveal=""><p class="kicker">03 · Estratégia</p><h2>Centralizar o que precisa trabalhar junto.</h2><p>A direção do produto foi organizar as áreas-chave da operação em uma estrutura única, com hierarquia clara, navegação previsível e informação suficiente para apoiar o trabalho diário sem sobrecarregar o usuário.</p></article>
-<article data-reveal=""><p class="kicker">04 · Solução</p><h2>Um sistema de gestão desenhado para uso real.</h2><p>A solução reúne agenda, clientes, serviços, produtos e acompanhamento de informações financeiras. A experiência foi desenhada para tornar tarefas recorrentes mais diretas e o estado da operação mais fácil de entender.</p></article>
-<article data-reveal=""><p class="kicker">05 · Resultado</p><h2>Resultados descritos sem métricas inventadas.</h2><p>O case demonstra a capacidade de transformar uma necessidade operacional em uma estrutura digital organizada. Métricas quantitativas não são apresentadas até que dados reais e validados estejam disponíveis.</p></article>
-</div>
-</div>
-</section>
-<section class="case-tech-section">
-<div class="container case-tech-grid" data-reveal="">
-<div><p class="kicker">Tecnologia</p><h2>A stack segue a solução.</h2></div>
-<div class="case-tech-list"><span>Interface web</span><span>Arquitetura de dados</span><span>Automação</span><span>UX operacional</span></div>
-</div>
-</section>
-<section class="contact-section">
-<div class="container case-next" data-reveal="">
-<div><p class="kicker">Próximo passo</p><h2>Sua empresa tem um processo parecido?</h2><p>Vamos entender o problema antes de decidir a solução.</p></div>
-<a class="button button--brand button--large" href="../#contato">Falar com a Polary →</a>
-</div>
-</section>
-</main>
-<footer class="site-footer"><div class="container footer-bottom footer-bottom--case"><span>© <span id="current-year"></span> Polary. Todos os direitos reservados.</span><a href="../#inicio">polary.com.br</a></div></footer>
-<script defer src="../../assets/js/theme.js"></script><script defer src="../../assets/js/main.js"></script>
-</body>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Estudo de Caso Paulo Ramos — Polary
+  </title>
+  <meta content="Estudo de caso Paulo Ramos: um sistema de gestão desenhado para organizar agenda, clientes, serviços, produtos e informações financeiras em uma experiência simples e utilizável." name="description"/>
+  <script>
+   (() => { try { const saved = localStorage.getItem('polary-theme'); const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches; const theme = saved === 'light' || saved === 'dark' ? saved : (prefersDark ? 'dark' : 'light'); document.documentElement.dataset.theme = theme; document.documentElement.style.colorScheme = theme; } catch (_) {} })();
+  </script>
+  <link href="https://polary.com.br/cases/paulo-ramos/" rel="canonical"/>
+  <link href="https://polary.com.br/cases/paulo-ramos/" hreflang="x-default" rel="alternate"/>
+  <link href="https://polary.com.br/en/cases/paulo-ramos/" hreflang="en" rel="alternate"/>
+  <link href="https://polary.com.br/cases/paulo-ramos/" hreflang="pt-BR" rel="alternate"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <meta content="light dark" name="color-scheme"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="../../assets/css/reset.css" rel="stylesheet"/>
+  <link href="../../assets/css/site.css" rel="stylesheet"/>
+  <link href="../../assets/css/theme.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <a class="skip-link" href="#main">
+   Pular para o conteúdo principal
+  </a>
+  <header class="site-header is-scrolled" data-header="">
+   <div class="container header-inner">
+    <a aria-label="Polary — início" class="brand" href="/#inicio">
+     <span class="logo">
+      <img alt="" class="logo--dark" height="550" src="/assets/images/logos/logo-exp-dark.svg" width="2295"/>
+      <img alt="" class="logo--white" height="550" src="/assets/images/logos/logo-exp-white.svg" width="2295"/>
+     </span>
+    </a>
+    <nav aria-label="Navegação principal" class="desktop-nav">
+     <a href="/#solucoes">
+      Soluções
+     </a>
+     <a href="/#processo">
+      Como trabalhamos
+     </a>
+     <a href="/#cases">
+      Casos
+     </a>
+     <a href="/#sobre">
+      Sobre
+     </a>
+    </nav>
+    <div class="header-tools">
+     <nav aria-label="Idioma" class="language-switcher">
+      <a aria-current="page" class="is-active" href="./" hreflang="pt-BR" lang="pt-BR">
+       PT
+      </a>
+      <a href="../../en/cases/paulo-ramos/" hreflang="en" lang="en">
+       EN
+      </a>
+     </nav>
+     <button aria-label="Alternar tema de cor" class="theme-toggle" data-theme-toggle="" type="button">
+      <svg aria-hidden="true" class="theme-icon theme-icon--sun" viewBox="0 0 24 24">
+       <circle cx="12" cy="12" r="3.5">
+       </circle>
+       <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41">
+       </path>
+      </svg>
+      <svg aria-hidden="true" class="theme-icon theme-icon--moon" viewBox="0 0 24 24">
+       <path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z">
+       </path>
+      </svg>
+     </button>
+     <a class="button button--brand header-cta" href="/#contato">
+      Falar com a Polary
+     </a>
+    </div>
+    <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu" class="menu-toggle" data-menu-toggle="" type="button">
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+   </div>
+   <div class="mobile-menu" data-mobile-menu="" hidden="" id="mobile-menu">
+    <nav aria-label="Navegação mobile" class="container mobile-nav">
+     <a href="/#solucoes">
+      Soluções
+     </a>
+     <a href="/#processo">
+      Como trabalhamos
+     </a>
+     <a href="/#cases">
+      Casos
+     </a>
+     <a href="/#sobre">
+      Sobre
+     </a>
+     <div class="mobile-preferences">
+      <span class="mobile-preferences-label">
+       Idioma
+      </span>
+      <div class="language-switcher language-switcher--mobile">
+       <a aria-current="page" class="is-active" href="./" hreflang="pt-BR" lang="pt-BR">
+        Português
+       </a>
+       <a href="../../en/cases/paulo-ramos/" hreflang="en" lang="en">
+        English
+       </a>
+      </div>
+     </div>
+     <a class="button button--brand" href="/#contato">
+      Falar com a Polary
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main class="case-page" id="main" tabindex="-1">
+   <section class="case-hero">
+    <div class="container case-hero-grid">
+     <div data-reveal="">
+      <a class="case-back" href="/#cases">
+       ← Voltar aos cases
+      </a>
+      <p class="kicker">
+       Estudo de Caso · Paulo Ramos
+      </p>
+      <h1>
+       Organize a operação antes de adicionar complexidade.
+      </h1>
+      <p class="case-hero-copy">
+       Um sistema de gestão que centraliza agenda, clientes, serviços, produtos e informações financeiras em uma experiência simples e utilizável.
+      </p>
+      <div class="case-tags">
+       <span>
+        Sistema
+       </span>
+       <span>
+        UX
+       </span>
+       <span>
+        Dados
+       </span>
+       <span>
+        Automação
+       </span>
+      </div>
+     </div>
+     <div class="case-hero-panel" data-reveal="">
+      <div>
+       <small>
+        CLIENTE
+       </small>
+       <strong>
+        Paulo Ramos
+       </strong>
+      </div>
+      <div>
+       <small>
+        TIPO
+       </small>
+       <strong>
+        Sistema de gestão
+       </strong>
+      </div>
+      <div>
+       <small>
+        FOCO
+       </small>
+       <strong>
+        Organização operacional
+       </strong>
+      </div>
+      <div>
+       <small>
+        ABORDAGEM
+       </small>
+       <strong>
+        Problema → estrutura → sistema
+       </strong>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="case-showcase-section">
+    <div class="container">
+     <div aria-label="Representação visual do sistema Paulo Ramos" class="case-showcase" data-reveal="">
+      <div class="barber-app barber-app--large">
+       <div class="barber-sidebar">
+        <div class="barber-logo">
+         PR
+        </div>
+        <span class="barber-nav is-active">
+        </span>
+        <span class="barber-nav">
+        </span>
+        <span class="barber-nav">
+        </span>
+        <span class="barber-nav">
+        </span>
+       </div>
+       <div class="barber-main">
+        <div class="barber-header">
+         <span>
+          Visão geral da operação
+         </span>
+         <span class="barber-avatar">
+         </span>
+        </div>
+        <div class="barber-grid">
+         <div class="barber-stat">
+          <small>
+           Agenda
+          </small>
+          <strong>
+           Hoje
+          </strong>
+          <span>
+          </span>
+         </div>
+         <div class="barber-stat">
+          <small>
+           Clientes
+          </small>
+          <strong>
+           Base
+          </strong>
+          <span>
+          </span>
+         </div>
+         <div class="barber-stat">
+          <small>
+           Serviços
+          </small>
+          <strong>
+           Mix
+          </strong>
+          <span>
+          </span>
+         </div>
+        </div>
+        <div class="barber-table">
+         <span>
+         </span>
+         <span>
+         </span>
+         <span>
+         </span>
+         <span>
+         </span>
+        </div>
+       </div>
+      </div>
+      <p class="demo-caption">
+       Representação ilustrativa do sistema.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="section case-story-section">
+    <div class="container case-story">
+     <aside class="case-story-nav" data-reveal="">
+      <span>
+       01
+      </span>
+      <span>
+       Contexto
+      </span>
+      <span>
+       02
+      </span>
+      <span>
+       Diagnóstico
+      </span>
+      <span>
+       03
+      </span>
+      <span>
+       Estratégia
+      </span>
+      <span>
+       04
+      </span>
+      <span>
+       Solução
+      </span>
+      <span>
+       05
+      </span>
+      <span>
+       Resultado
+      </span>
+     </aside>
+     <div class="case-story-content">
+      <article data-reveal="">
+       <p class="kicker">
+        01 · Contexto
+       </p>
+       <h2>
+        O ponto de partida.
+       </h2>
+       <p>
+        O projeto começou com a necessidade de organizar informações críticas da operação da barbearia em uma experiência centralizada, evitando que rotinas importantes permanecessem espalhadas.
+       </p>
+      </article>
+      <article data-reveal="">
+       <p class="kicker">
+        02 · Diagnóstico
+       </p>
+       <h2>
+        O problema não era "falta de tecnologia".
+       </h2>
+       <p>
+        Antes de pensar na interface, a prioridade foi entender quais informações precisavam se conectar: agenda, clientes, serviços, produtos e dados financeiros. O sistema deveria reduzir atrito, não criar mais uma camada de complexidade.
+       </p>
+      </article>
+      <article data-reveal="">
+       <p class="kicker">
+        03 · Estratégia
+       </p>
+       <h2>
+        Centralizar o que precisa trabalhar junto.
+       </h2>
+       <p>
+        A direção do produto foi organizar as áreas-chave da operação em uma estrutura única, com hierarquia clara, navegação previsível e informação suficiente para apoiar o trabalho diário sem sobrecarregar o usuário.
+       </p>
+      </article>
+      <article data-reveal="">
+       <p class="kicker">
+        04 · Solução
+       </p>
+       <h2>
+        Um sistema de gestão desenhado para uso real.
+       </h2>
+       <p>
+        A solução reúne agenda, clientes, serviços, produtos e acompanhamento de informações financeiras. A experiência foi desenhada para tornar tarefas recorrentes mais diretas e o estado da operação mais fácil de entender.
+       </p>
+      </article>
+      <article data-reveal="">
+       <p class="kicker">
+        05 · Resultado
+       </p>
+       <h2>
+        Uma operação conectada como objetivo.
+       </h2>
+       <p>
+        O projeto está em desenvolvimento. A estrutura proposta conecta as principais rotinas; o impacto no dia a dia ainda precisa ser validado em uso.
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="case-tech-section">
+    <div class="container case-tech-grid" data-reveal="">
+     <div>
+      <p class="kicker">
+       Tecnologia
+      </p>
+      <h2>
+       A stack segue a solução.
+      </h2>
+     </div>
+     <div class="case-tech-list">
+      <span>
+       Interface web
+      </span>
+      <span>
+       Arquitetura de dados
+      </span>
+      <span>
+       Automação
+      </span>
+      <span>
+       UX operacional
+      </span>
+     </div>
+    </div>
+   </section>
+   <section class="contact-section">
+    <div class="container case-next" data-reveal="">
+     <div>
+      <p class="kicker">
+       Próximo passo
+      </p>
+      <h2>
+       Sua empresa tem um processo parecido?
+      </h2>
+      <p>
+       Vamos entender o problema antes de decidir a solução.
+      </p>
+     </div>
+     <a class="button button--brand button--large" href="/#contato">
+      Falar com a Polary →
+     </a>
+    </div>
+   </section>
+  </main>
+  <footer class="site-footer">
+   <div class="container footer-bottom footer-bottom--case">
+    <span>
+     ©
+     <span id="current-year">
+     </span>
+     Polary. Todos os direitos reservados.
+    </span>
+    <a href="/#inicio">
+     polary.com.br
+    </a>
+   </div>
+  </footer>
+  <script defer="" src="../../assets/js/theme.js">
+  </script>
+  <script defer="" src="../../assets/js/main.js">
+  </script>
+ </body>
 </html>

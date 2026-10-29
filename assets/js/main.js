@@ -21,7 +21,7 @@
         emailInvalid: "Enter a valid email address.",
         needRequired: "Select an option.",
         reviewFields: "Review the highlighted fields.",
-        openingEmail: "Opening your email application…",
+        openingEmail: "Email prepared. If your email app opens, review and send it there. Otherwise use the direct email link.",
         projectSubject: "Polary project",
         bodyName: "Name",
         bodyCompany: "Company",
@@ -49,7 +49,7 @@
         emailInvalid: "Informe um e-mail válido.",
         needRequired: "Selecione uma opção.",
         reviewFields: "Revise os campos destacados.",
-        openingEmail: "Abrindo seu aplicativo de e-mail…",
+        openingEmail: "E-mail preparado. Se o aplicativo abrir, revise e envie por lá. Caso contrário, use o link de contato direto.",
         projectSubject: "Projeto Polary",
         bodyName: "Nome",
         bodyCompany: "Empresa",
@@ -115,7 +115,7 @@
     "resize",
     () => {
       if (
-        window.innerWidth > 1024 &&
+        window.innerWidth >= 1160 &&
         menuToggle?.getAttribute("aria-expanded") === "true"
       )
         closeMenu();
@@ -123,19 +123,26 @@
     { passive: true },
   );
 
+  // Keep native hash/history behavior. Only transfer focus and close the menu.
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
-      const id = link.getAttribute("href");
-      if (!id || id === "#") return;
-      const target = document.querySelector(id);
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const target = document.getElementById(link.hash.slice(1));
       if (!target) return;
-      event.preventDefault();
       closeMenu();
-      target.scrollIntoView({
-        behavior: prefersReducedMotion ? "auto" : "smooth",
-        block: "start",
-      });
-      target.focus();
+      if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
+    });
+  });
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => closeMenu());
+  });
+  document.addEventListener("click", (event) => {
+    if (!header?.contains(event.target)) closeMenu();
+  });
+  header?.addEventListener("focusout", () => {
+    requestAnimationFrame(() => {
+      if (!header.contains(document.activeElement)) closeMenu();
     });
   });
 
@@ -158,75 +165,14 @@
     observedSections.forEach((section) => sectionObserver.observe(section));
   }
 
-  const revealElements = document.querySelectorAll("[data-reveal]");
-  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-    revealElements.forEach((element) => element.classList.add("is-visible"));
-  } else {
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
-    );
-    revealElements.forEach((element) => revealObserver.observe(element));
-  }
-
-  const stageCopy = isEnglish
-    ? {
-        analise: [
-          "Turn scattered signals into direction.",
-          "analysis + strategy",
-        ],
-        estrategia: [
-          "Define priorities before choosing tools.",
-          "clarity + architecture",
-        ],
-        solucao: [
-          "Build only what solves the problem.",
-          "product + operations",
-        ],
-        evolucao: [
-          "Measure, learn and improve with context.",
-          "feedback + data",
-        ],
-      }
-    : {
-        analise: [
-          "Transformar sinais dispersos em direção.",
-          "análise + estratégia",
-        ],
-        estrategia: [
-          "Definir prioridade antes de escolher ferramenta.",
-          "clareza + arquitetura",
-        ],
-        solucao: [
-          "Construir somente o que resolve o problema.",
-          "produto + operação",
-        ],
-        evolucao: [
-          "Medir, aprender e melhorar com contexto.",
-          "feedback + dados",
-        ],
-      };
-
-  document.querySelectorAll(".rail-item").forEach((button) => {
-    button.addEventListener("click", () => {
-      document
-        .querySelectorAll(".rail-item")
-        .forEach((item) => item.classList.remove("is-active"));
-      button.classList.add("is-active");
-      const key = button.dataset.stage;
-      const heading = document.querySelector(".map-heading h2");
-      const core = document.querySelector(".core-node small");
-      if (stageCopy[key] && heading && core) {
-        heading.textContent = stageCopy[key][0];
-        core.textContent = stageCopy[key][1];
-      }
-    });
+  // Content remains visible even if JavaScript or observers are unavailable.
+  const track = (name, attributes = {}) => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({event: "polary_interaction", interaction_name: name, ...attributes});
+  };
+  document.querySelectorAll(".faq-item button").forEach((button) => {
+    const answer = document.getElementById(button.getAttribute("aria-controls"));
+    if (answer) { answer.hidden = true; button.setAttribute("aria-expanded", "false"); }
   });
 
   document.querySelectorAll(".faq-item button").forEach((button) => {
@@ -250,10 +196,19 @@
 
       button.setAttribute("aria-expanded", String(!expanded));
       answer.hidden = expanded;
+      if (!expanded) track("faq_open", {faq_id: answer.id});
     });
   });
 
   const form = document.getElementById("contact-form");
+  if (form) {
+    form.noValidate = true;
+    form.querySelector('[type="submit"]').disabled = false;
+  }
+  let formStarted = false;
+  form?.addEventListener("input", () => {
+    if (!formStarted) { formStarted = true; track("form_start"); }
+  });
   const status = document.getElementById("form-status");
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -318,6 +273,7 @@
     }
 
     if (!valid) {
+      track("form_validation_error");
       const firstInvalid = form.querySelector('[aria-invalid="true"]');
       firstInvalid?.focus();
       if (status) {
@@ -332,9 +288,9 @@
     const subject = `${ui.projectSubject} — ${needLabel}`;
     const body = [
       `${ui.bodyName}: ${name.value.trim()}`,
-      `${ui.bodyCompany}: ${form.elements.empresa.value.trim() || ui.notProvided}`,
+      `${ui.bodyCompany}: ${form.elements.empresa?.value.trim() || ui.notProvided}`,
       `${ui.bodyEmail}: ${email.value.trim()}`,
-      `${ui.bodyWhatsapp}: ${form.elements.whatsapp.value.trim() || ui.notProvided}`,
+      `${ui.bodyWhatsapp}: ${form.elements.whatsapp?.value.trim() || ui.notProvided}`,
       `${ui.bodyNeed}: ${needLabel}`,
       "",
       `${ui.bodyMessage}:`,
@@ -343,34 +299,21 @@
 
     const mailto = `mailto:contato@polary.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     if (status) {
-      status.textContent =
-        "Seu aplicativo de e-mail será aberto com os dados preenchidos. " +
-        "Revise a mensagem e envie por lá. " +
-        "Não há envio automático — use o e-mail contato@polary.com.br para contato direto.";
-      status.classList.remove("is-error", "is-success");
-      status.classList.add("is-info");
+      status.textContent = ui.openingEmail;
+      status.classList.add("is-pending");
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event: "polary_interaction", interaction_name: "email_client_open"});
     }
-
     window.location.href = mailto;
   });
 
   const collapsePanel = (panel) => {
+    panel.hidden = true;
     panel.classList.remove("is-open");
-    const hide = () => {
-      panel.removeEventListener("transitionend", hide);
-      if (!panel.classList.contains("is-open")) panel.hidden = true;
-    };
-    panel.addEventListener("transitionend", hide);
-    window.clearTimeout(panel._collapseTimer);
-    panel._collapseTimer = window.setTimeout(hide, 420);
   };
-
   const expandPanel = (panel) => {
-    window.clearTimeout(panel._collapseTimer);
     panel.hidden = false;
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => panel.classList.add("is-open"));
-    });
+    panel.classList.add("is-open");
   };
 
   document.querySelectorAll(".plan-toggle").forEach((button) => {
@@ -413,7 +356,7 @@
     link.addEventListener("click", () => {
       const planName = ui.plans[link.dataset.plan];
       if (form && planName) {
-        form.elements.mensagem.value = ui.proposalMessage(planName);
+        if (!form.elements.mensagem.value.trim()) form.elements.mensagem.value = ui.proposalMessage(planName);
         focusMessage();
       }
     });
@@ -422,7 +365,7 @@
   document.querySelectorAll("[data-plan-diagnosis]").forEach((link) => {
     link.addEventListener("click", () => {
       if (form) {
-        form.elements.mensagem.value = ui.diagnosisMessage;
+        if (!form.elements.mensagem.value.trim()) form.elements.mensagem.value = ui.diagnosisMessage;
         focusMessage();
       }
     });
@@ -439,6 +382,7 @@
         event: "polary_interaction",
         interaction_name: eventName,
       };
+      interaction.interaction_location = element.closest("section")?.id || (element.closest("header") ? "header" : "footer");
       if (element.dataset.plan) interaction.interaction_plan =
         element.dataset.plan;
       window.dataLayer.push(interaction);

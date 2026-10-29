@@ -1,0 +1,27 @@
+/* Existing English proposal options, preserved without adding commercial claims. */
+.plans-group { margin-top: 64px; }
+.plans-label { font-size: 24px; margin-bottom: 24px; }
+.plans-grid { display: grid; gap: 20px; }
+.plan-card { border: 1px solid var(--theme-border); border-radius: 24px; padding: 28px; background: var(--theme-panel); min-width: 0; }
+.plan-card--featured { border-color: var(--brand-blue); }
+.plan-card-topline, .plan-category { font-size: 12px; color: var(--theme-accent); }
+.plan-name { margin-block: 16px; font-size: 28px; }
+.plan-desc, .plan-audience, .plan-benefits { font-size: 14px; color: var(--theme-text-secondary); }
+.plan-audience { margin-top: 16px; }
+.plan-features { padding-left: 20px; font-size: 14px; margin-block: 24px; }
+.plan-features li { margin-top: 12px; }
+.plan-actions { display: grid; gap: 12px; margin-top: 24px; }
+.plan-toggle, .compare-toggle { color: var(--theme-accent); background: transparent; border: 1px solid var(--theme-border); border-radius: 10px; padding: 12px 16px; min-height: 44px; font-size: 14px; }
+.plan-details { padding-top: 24px; font-size: 14px; }
+.plan-details-label { font-weight: 600; margin-block: 12px; }
+.plans-divider { margin-block: 32px; border: 0; border-top: 1px solid var(--theme-border); }
+.plans-note, .compare-notes { font-size: 13px; margin-top: 24px; }
+.plans-cta { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 24px; }
+.plan-compare { margin-top: 32px; }
+.compare-panel { margin-top: 24px; }
+.compare-scroll { overflow-x: auto; }
+.compare-table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 13px; }
+.compare-table th, .compare-table td { text-align: left; padding: 16px; border-bottom: 1px solid var(--theme-border); }
+.compare-table th { color: var(--theme-accent); }
+.sr-only { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
+@media(min-width:900px) { .plans-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }

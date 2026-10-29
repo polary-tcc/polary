@@ -32,7 +32,6 @@ Site-Polary/
 ├── cases/
 │   └── paulo-ramos/
 │       └── index.html               # Português
-├── ARQUITETURA.md
 ├── assets/
 │   ├── css/
 │   │   ├── reset.css
@@ -41,20 +40,7 @@ Site-Polary/
 │   └── js/
 │       ├── main.js                  # comportamento localizado PT/EN
 │       └── theme.js                 # tema claro/escuro
-├── assets/images/
-│   ├── logos/
-│   │   ├── logo-exp-dark.svg
-│   │   └── logo-exp-white.svg
-│   ├── cases/
-│   │   └── paulo-ramos-placeholder.jpg
-│   └── site/
-│       ├── favicon-16x16.svg
-│       ├── favicon-32x32.svg
-│       ├── favicon.svg
-│       ├── apple-touch-icon.svg
-│       └── sitemap.xml
-├── 404.html
-├── en/404.html
+├── ARQUITETURA.md
 ├── robots.txt
 └── sitemap.xml
 ```
