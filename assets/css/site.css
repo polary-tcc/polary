@@ -9,8 +9,11 @@
   --ink-400: #6f8287; /* Texto muito suave */
   --ink-300: #53666d; /* Texto desativado */
   
-  /* Cores de destaque - Azul da marca (sólido) */
-  --brand-blue: #2563EB;
+  /* Cores de destaque - Azul da marca */
+  --brand-blue-500: #2563EB;
+  --brand-blue-600: #1D4ED8;
+  --brand-blue-50: rgba(37, 99, 235, .15);
+  --brand-blue: var(--brand-blue-500);
   
   /* Cores de superfície */
   --surface: #071015; /* Fundo principal - tema escuro */
@@ -284,12 +287,17 @@ img {
   transition: transform var(--fast) var(--ease), background var(--fast) var(--ease), border-color var(--fast) var(--ease), color var(--fast) var(--ease);
 }
 
+.button:focus-visible {
+  outline: 2px solid var(--brand-blue-500);
+  outline-offset: 2px;
+}
+
 .button:hover {
   transform: translateY(-1px);
 }
 
 .button:active {
-  transform: translateY(0);
+  transform: scale(0.97) translateY(0);
 }
 
 .button--large {
@@ -310,7 +318,8 @@ img {
 }
 
 .button--brand:focus-visible {
-  outline-color: rgba(37, 99, 235, .42);
+  outline: 2px solid var(--brand-blue-500);
+  outline-offset: 2px;
 }
 
 .button--ghost {
@@ -1246,14 +1255,14 @@ img {
 .field select:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--brand-blue);
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, .15);
+  border-color: var(--brand-blue-500);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
   background: var(--surface);
 }
 
 .field [aria-invalid="true"] {
   border-color: var(--danger);
-  box-shadow: 0 0 0 4px rgba(255, 143, 143, .1);
+  box-shadow: 0 0 0 3px rgba(255, 143, 143, .1);
 }
 
 .field-error {

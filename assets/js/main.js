@@ -343,9 +343,14 @@
 
     const mailto = `mailto:contato@polary.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     if (status) {
-      status.textContent = ui.openingEmail;
-      status.classList.add("is-success");
+      status.textContent =
+        "Seu aplicativo de e-mail será aberto com os dados preenchidos. " +
+        "Revise a mensagem e envie por lá. " +
+        "Não há envio automático — use o e-mail contato@polary.com.br para contato direto.";
+      status.classList.remove("is-error", "is-success");
+      status.classList.add("is-info");
     }
+
     window.location.href = mailto;
   });
 

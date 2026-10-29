@@ -42,8 +42,9 @@ html[data-theme="dark"] {
   --theme-input: #0c181e;
   --theme-elevated: #111f26;
   --theme-grid: rgba(255, 255, 255, .035);
-  --brand-blue: #2563EB;
-  --brand-blue-translucent: rgba(37, 99, 235, .15);
+  --brand-blue-500: #2563EB;
+  --brand-blue-600: #1D4ED8;
+  --brand-blue-50: rgba(37, 99, 235, .15);
   --ink-950: #edf5f3;
   --ink-900: #e3eeeb;
   --ink-800: #d2dfdc;
@@ -377,7 +378,7 @@ html[data-theme="dark"] .solution-card--brand {
 }
 
 html[data-theme="dark"] .solution-card--data {
-  background: linear-gradient(145deg, var(--brand-blue-translucent) 0%, var(--brand-blue-translucent) 100%);
+  background: linear-gradient(145deg, var(--brand-blue-50) 0%, var(--brand-blue-50) 100%);
 }
 
 html[data-theme="dark"] .solution-content li {
@@ -423,7 +424,7 @@ html[data-theme="dark"] .case-copy {
 
 html[data-theme="dark"] .diff-block {
   background: #0e1a21;
-  border: 1px solid var(--brand-blue);
+  border: 1px solid var(--brand-blue-500);
 }
 
 html[data-theme="dark"] .diff-block--accent {
@@ -589,7 +590,7 @@ html[data-theme="dark"] .console-route span::before {
 
 /* #2563EB remains the primary interaction accent in both themes. */
 html[data-theme="dark"] .desktop-nav a::after {
-  background: var(--brand-blue);
+  background: var(--brand-blue-500);
 }
 
 html[data-theme="dark"] .process-flow li>span {
@@ -598,7 +599,7 @@ html[data-theme="dark"] .process-flow li>span {
 }
 
 html[data-theme="dark"] .signal span {
-  background: var(--brand-blue);
+  background: var(--brand-blue-500);
   border-color: #101d24;
 }
 
@@ -660,7 +661,7 @@ html[data-theme="dark"] .circle-topic{
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: var(--brand-blue);
+  background-color: var(--brand-blue-500);
 }
 
 html[data-theme="dark"] .row-index {
