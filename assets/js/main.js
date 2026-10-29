@@ -135,6 +135,7 @@
         behavior: prefersReducedMotion ? "auto" : "smooth",
         block: "start",
       });
+      target.focus();
     });
   });
 

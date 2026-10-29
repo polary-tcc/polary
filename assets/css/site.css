@@ -9,13 +9,8 @@
   --ink-400: #6f8287; /* Texto muito suave */
   --ink-300: #53666d; /* Texto desativado */
   
-  /* Cores de destaque - Azul da marca */
+  /* Cores de destaque - Azul da marca (sólido) */
   --brand-blue: #2563EB;
-  --brand-blue-700: #1D4ED8;
-  --brand-blue-500: #3B82F6;
-  --brand-blue-200: #BFDBFE;
-  --brand-blue-100: #DBEAFE;
-  --brand-blue-soft: #EFF6FF;
   
   /* Cores de superfície */
   --surface: #071015; /* Fundo principal - tema escuro */
@@ -310,7 +305,7 @@ img {
 }
 
 .button--brand:hover {
-  background: var(--brand-blue-700);
+  background: rgba(37, 99, 235, .18);
   box-shadow: 0 3px 0 rgba(29, 78, 216, .22), 0 14px 30px rgba(37, 99, 235, .18);
 }
 
