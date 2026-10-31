@@ -73,49 +73,9 @@
   <header class="site-header" data-header="">
    <div class="container header-inner">
     <a aria-label="Polary — início" class="brand" href="#inicio">
-     <span class="logo">
-      <img alt="" class="logo--dark" height="550" src="/assets/images/logos/logo-exp-dark.svg" width="2295"/>
-      <img alt="" class="logo--white" height="550" src="/assets/images/logos/logo-exp-white.svg" width="2295"/>
-     </span>
-    </a>
-    <nav aria-label="Navegação principal" class="desktop-nav">
-     <a href="#solucoes">
-      Soluções
-     </a>
-     <a href="#processo">
-      Como trabalhamos
-     </a>
-     <a href="#cases">
-      Casos
-     </a>
-     <a href="#sobre">
-      Sobre
-     </a>
-    </nav>
-    <div class="header-tools">
-     <nav aria-label="Idioma" class="language-switcher">
-      <a aria-current="page" class="is-active" href="./" hreflang="pt-BR" lang="pt-BR">
-       PT
-      </a>
-      <a href="en/" hreflang="en" lang="en">
-       EN
-      </a>
-     </nav>
-     <button aria-label="Alternar tema de cor" class="theme-toggle" data-theme-toggle="" type="button">
-      <svg aria-hidden="true" class="theme-icon theme-icon--sun" viewBox="0 0 24 24">
-       <circle cx="12" cy="12" r="3.5">
-       </circle>
-       <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41">
-       </path>
-      </svg>
-      <svg aria-hidden="true" class="theme-icon theme-icon--moon" viewBox="0 0 24 24">
-       <path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z">
-       </path>
-      </svg>
-     </button>
-     <a class="button button--brand header-cta" data-event="header_contact" href="#contato">
-      Falar com a Polary
-     </a>
+     <div class="logo">
+       <img alt="" class="logo--dark" src="assets/images/logos/logo-exp-dark.svg" alt="">
+       <img alt="" class="logo--white" src="assets/images/logos/logo-exp-white.svg" alt="">
     </div>
     <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu" class="menu-toggle" data-menu-toggle="" type="button">
      <span>
@@ -184,13 +144,7 @@
         </span>
        </a>
       </div>
-      <div class="trust-row">
-       <span aria-hidden="true" class="trust-separator">
-       </span>
-       <span>
-        Estratégia antes da tecnologia.
-       </span>
-      </div>
+ 
      </div>
      <div aria-label="Ilustração conceitual: informações dispersas conectadas em uma operação." class="direction-visual" role="img">
       <div class="visual-topline">
@@ -232,7 +186,7 @@
        <strong>
         Seu próximo passo.
        </strong>
-       <div class="direction-tags">
+       <div class="direction-tags" aria-hidden="true">
         <span>
          Processos
         </span>
@@ -266,7 +220,7 @@
    </section>
    <section aria-labelledby="problems-title" class="section section--soft" id="problemas">
     <div class="container">
-     <div class="section-intro sticky-intro" data-reveal="">
+     <div class="section-intro">
       <p class="kicker">
        O problema
       </p>
@@ -860,7 +814,7 @@
        </p>
       </article>
      </div>
-     <div class="section-intro sticky-intro" data-reveal="">
+     <div class="section-intro">
       <p class="kicker">
        Princípios
       </p>
@@ -955,39 +909,16 @@
      </div>
     </div>
    </section>
-   <section aria-label="Tecnologias utilizadas" class="tech-strip" id="tecnologias">
-    <div class="container tech-strip-inner">
-     <div aria-label="Stack" class="tech-list">
-      <span>
-       Automação
-      </span>
-      <span>
-       Estratégia
-      </span>
-      <span>
-       Dados
-      </span>
-      <span>
-       Experiência
-      </span>
-      <span>
-       Inteligência
-      </span>
-      <span>
-       IA
-      </span>
-     </div>
-    </div>
-   </section>
-   <section aria-labelledby="about-title" class="section section--ink" id="sobre">
+   
+   <section aria-labelledby="about-title" class="section section--ink" id="sobre" style="scroll-margin-top: 80px;">
     <div class="container about-layout">
      <div class="about-header">
       <div class="header-inner">
        <a aria-label="Polary — início" class="brand" href="#inicio">
         <div class="logo">
-          <img class="logo--dark" src="assets/images/logos/logo-exp-dark.svg" alt="">
-          <img class="logo--white" src="assets/images/logos/logo-exp-white.svg" alt="">
-         </div>
+       <img alt="" class="logo--dark" src="assets/images/logos/logo-exp-dark.svg" alt="">
+       <img alt="" class="logo--white" src="assets/images/logos/logo-exp-white.svg" alt="">
+    </div>
         </a>
        <nav aria-label="Navegação principal" class="desktop-nav">
         <a href="#solucoes">Soluções</a>
@@ -995,7 +926,7 @@
         <a href="#cases">Casos</a>
         <a href="#sobre">Sobre</a>
        </nav>
-       <span class="tech-label-subtle">Tecnologia a serviço do problema</span>
+       
        <div class="header-tools">
         <nav aria-label="Idioma" class="language-switcher">
          <a
@@ -1103,7 +1034,7 @@
    </section>
    <section aria-labelledby="faq-title" class="section" id="faq">
     <div class="container faq-layout">
-     <div class="section-intro sticky-intro" data-reveal="">
+     <div class="section-intro">
       <p class="kicker">
        FAQ
       </p>
@@ -1402,6 +1333,21 @@
      </a>
     </div>
    </div>
+   <div>
+     <h2>
+      Informações Legais
+     </h2>
+     <small>
+      Modelos a serem revisados por profissional jurídico.
+     </small>
+     <a href="#politica-privacidade">
+      Política de Privacidade
+     </a>
+     <a href="#termos-uso">
+      Termos de Uso
+     </a>
+    </div>
+
    <div class="container footer-bottom">
     <span>
      ©
