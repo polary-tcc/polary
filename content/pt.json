@@ -165,7 +165,7 @@
   "contactTitle": "Qual é o próximo passo do seu negócio?",
   "contactIntro": "Conte onde sua empresa está e o que precisa melhorar. Vamos começar entendendo o seu cenário.",
   "emailLabel": "Prefere falar por e-mail?",
-  "formNote": "Preencha para preparar uma mensagem no seu aplicativo de e-mail. Você revisa e envia por lá.",
+  "formNote": "Prepare sua mensagem, confira os dados e escolha entre abrir o aplicativo de e-mail ou copiar o texto.",
   "labels": [
     "Seu nome",
     "Seu e-mail",
@@ -198,7 +198,7 @@
   "privacySections": [
     [
       "Formulário de contato",
-      "O formulário prepara uma mensagem no aplicativo de e-mail do visitante. Esta versão não envia nem armazena os campos em um servidor da Polary. O envio ocorre somente quando você o conclui no seu aplicativo. Evite incluir senhas ou informações sensíveis."
+      "O formulário prepara uma mensagem para você revisar nesta página. Você pode copiar o texto ou abrir o aplicativo de e-mail. Esta versão não envia nem armazena os campos em um servidor da Polary. O envio ocorre somente quando você o conclui no seu aplicativo. Evite incluir senhas ou informações sensíveis."
     ],
     [
       "Preferência de tema",
@@ -307,5 +307,26 @@
   "sourcesText": "Entrevista com Paulo, documentação do TCC, diagnósticos estratégicos, pesquisa de mercado, planejamento e requisitos do sistema. Propostas de infraestrutura e hipóteses de mercado são tratadas como propostas, não como resultados de implantação.",
   "caseCta": "Seu negócio enfrenta um desafio parecido?",
   "caseCtaText": "Vamos entender sua rotina e identificar um caminho possível.",
-  "returnProjects": "Voltar aos projetos"
+  "returnProjects": "Voltar aos projetos",
+  "concept": {
+    "label": "Uma visão integrada do seu negócio",
+    "heading": "Tudo conversa.",
+    "subheading": "Uma direção em comum.",
+    "hint": "Explore as conexões",
+    "types": [
+      "Marca",
+      "Tecnologia",
+      "Dados"
+    ],
+    "descriptions": [
+      "Posicionamento e identidade para comunicar o valor do seu negócio com consistência.",
+      "Processos e sistemas que organizam a rotina de quem trabalha com você.",
+      "Informações estruturadas para enxergar o negócio e apoiar as próximas decisões."
+    ],
+    "pill": "Estratégia que conecta",
+    "foot": "VISÃO INTEGRADA / POLARY",
+    "title": "Uma direção. Três frentes conectadas."
+  },
+  "contactPreviewTitle": "Sua mensagem está pronta para revisar.",
+  "contactOpenEmail": "Abrir aplicativo de e-mail"
 }

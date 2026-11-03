@@ -1,0 +1,25 @@
+{
+  "email": "contato@polary.com.br",
+  "phone": null,
+  "address": null,
+  "tester": null,
+  "version": "2.1.0",
+  "updated": "2026-11-03",
+  "founders": [
+    {
+      "name": "Gabriel Sales Camargo",
+      "role": {
+        "pt": "Desenvolvimento e dados",
+        "en": "Development and data"
+      }
+    },
+    {
+      "name": "Leonardo de Camargo Faria",
+      "role": {
+        "pt": "Design e comunicação",
+        "en": "Design and communication"
+      }
+    }
+  ],
+  "url": "https://polary-tcc.github.io/polary/"
+}

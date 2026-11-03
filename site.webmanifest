@@ -1,1 +1,1 @@
-{"name": "Polary", "short_name": "Polary", "start_url": "/", "display": "browser", "background_color": "#fafaf8", "theme_color": "#2563eb", "icons": [{"src": "/assets/images/site/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}]}
+{"name": "Polary", "short_name": "Polary", "start_url": "/polary/", "scope": "/polary/", "display": "browser", "background_color": "#fafaf8", "theme_color": "#2563eb", "icons": [{"src": "/polary/assets/images/site/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}]}

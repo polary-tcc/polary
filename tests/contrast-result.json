@@ -1,0 +1,97 @@
+[
+  {
+    "pair": "light text",
+    "ratio": 14.82,
+    "passes_4_5": true
+  },
+  {
+    "pair": "light secondary",
+    "ratio": 6.05,
+    "passes_4_5": true
+  },
+  {
+    "pair": "light secondary on surface",
+    "ratio": 5.58,
+    "passes_4_5": true
+  },
+  {
+    "pair": "light accent",
+    "ratio": 5.33,
+    "passes_4_5": true
+  },
+  {
+    "pair": "light button",
+    "ratio": 5.57,
+    "passes_4_5": true
+  },
+  {
+    "pair": "light error",
+    "ratio": 5.8,
+    "passes_4_5": true
+  },
+  {
+    "pair": "dark text",
+    "ratio": 16.62,
+    "passes_4_5": true
+  },
+  {
+    "pair": "dark secondary",
+    "ratio": 9.7,
+    "passes_4_5": true
+  },
+  {
+    "pair": "dark secondary on surface",
+    "ratio": 8.81,
+    "passes_4_5": true
+  },
+  {
+    "pair": "dark accent",
+    "ratio": 9.41,
+    "passes_4_5": true
+  },
+  {
+    "pair": "dark button",
+    "ratio": 8.75,
+    "passes_4_5": true
+  },
+  {
+    "pair": "dark error",
+    "ratio": 9.89,
+    "passes_4_5": true
+  },
+  {
+    "pair": "case heading",
+    "ratio": 14.16,
+    "passes_4_5": true
+  },
+  {
+    "pair": "case accent",
+    "ratio": 8.4,
+    "passes_4_5": true
+  },
+  {
+    "pair": "case caption",
+    "ratio": 9.5,
+    "passes_4_5": true
+  },
+  {
+    "pair": "board text",
+    "ratio": 15.05,
+    "passes_4_5": true
+  },
+  {
+    "pair": "board muted",
+    "ratio": 9.36,
+    "passes_4_5": true
+  },
+  {
+    "pair": "board selected button",
+    "ratio": 8.2,
+    "passes_4_5": true
+  },
+  {
+    "pair": "board inactive button",
+    "ratio": 10.06,
+    "passes_4_5": true
+  }
+]

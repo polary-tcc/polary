@@ -1,0 +1,13 @@
+{
+  "version": "2.1.0",
+  "date": "2026-11-03",
+  "environment": "Remote Chromium, preview served at /polary/",
+  "combinations": 64,
+  "horizontal_overflow_failures": [],
+  "mobile_menu_escape": "passed",
+  "connection_keyboard_en": "passed",
+  "contact_preview_no_navigation": "passed",
+  "theme_persistence_case": "passed",
+  "human_acceptance": false,
+  "production_deployment": "not performed; user will upload the package"
+}

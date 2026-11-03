@@ -1,84 +1,56 @@
-# Polary — Site Institucional
+# Polary — GitHub Pages — versão 2.1.0
 
-Site institucional bilíngue da Polary com foco em percepção premium, clareza comercial, UX, responsividade, acessibilidade e performance.
+Projeto preparado para **https://polary-tcc.github.io/polary/**. O ZIP tem o `index.html` diretamente na raiz, junto das pastas `assets`, `en`, `cases`, `creditos` e `privacidade`. O site já está gerado: não exige instalar nada nem executar Python na hospedagem.
 
-## Recursos principais
+## Publicar pelo navegador
 
-- tema claro e escuro com preferência persistida em `localStorage`;
-- tema inicial respeita `prefers-color-scheme` quando o visitante ainda não fez uma escolha;
-- prevenção de *flash* de tema incorreto na primeira renderização;
-- português em `/` e inglês profissional em `/en/`;
-- página do case Paulo Ramos em português e inglês;
-- `hreflang`, canonical e metadados específicos por idioma;
-- sitemap multilíngue;
-- Header sticky e menu mobile acessível;
-- Hero interativo;
-- FAQ acessível;
-- formulário com validação e mensagens no idioma da página;
-- `prefers-reduced-motion`;
-- responsividade 320px+;
-- eventos preparados em `window.dataLayer`.
+1. Extraia o ZIP no computador. Abra a pasta extraída e confira que há um `index.html` e uma pasta `assets` lado a lado.
+2. No repositório `polary-tcc/polary`, escolha **Add file → Upload files**.
+3. Arraste **o conteúdo da pasta extraída**, incluindo as pastas inteiras. Não arraste a pasta externa criada pelo descompactador. Não abra cada subpasta para copiar os arquivos individualmente.
+4. Confirme o commit. Em **Settings → Pages**, use **Deploy from a branch → main → /(root)** e salve.
+5. Aguarde o processo de Pages terminar. Acesse https://polary-tcc.github.io/polary/ e atualize com **Ctrl + Shift + R** se o navegador ainda mostrar a versão antiga.
 
-## Estrutura
+Caso sua configuração atual use `/docs`, altere para `/(root)` para usar este pacote. Se já publica de `main / root`, basta substituir os arquivos e confirmar o commit. O guia detalhado está em `PUBLICAR-NO-GITHUB.md`.
 
-```text
-Site-Polary/
-├── index.html                       # Português
-├── en/
-│   ├── index.html                   # English
-│   └── cases/
-│       └── paulo-ramos/
-│           └── index.html
-├── cases/
-│   └── paulo-ramos/
-│       └── index.html               # Português
-├── assets/
-│   ├── css/
-│   │   ├── reset.css
-│   │   ├── site.css                  # design system, layout e componentes
-│   │   └── theme.css                 # tema claro/escuro + controles de preferência
-│   └── js/
-│       ├── main.js                  # comportamento localizado PT/EN
-│       └── theme.js                 # tema claro/escuro
-├── ARQUITETURA.md
-├── robots.txt
-└── sitemap.xml
-```
+**Não suba o ZIP sem extrair. Não mova o conteúdo de assets para a raiz. Não coloque index.html dentro de outra pasta polary no repositório.**
 
-## Idiomas
+## O que foi corrigido
 
-A implementação usa URLs reais por idioma em vez de trocar todos os textos somente por JavaScript. Isso melhora SEO, compartilhamento de URLs, acessibilidade e evita conteúdo piscando durante a tradução.
+A versão recebida usava `/assets/...`, `/en/` e `/cases/...`; no projeto Pages esses caminhos saíam de `/polary/`. A versão atual centraliza o endereço completo em `content/site.json` e gera todos os caminhos com `/polary/`, inclusive SEO, manifest, idiomas, logotipos e páginas internas. O `_headers` de outros provedores não é usado: GitHub Pages não o interpreta como configuração de segurança.
 
-- Português: `https://polary.com.br/`
-- English: `https://polary.com.br/en/`
+## Melhorias
 
-As páginas possuem links `hreflang` para ajudar mecanismos de busca a entender as versões equivalentes.
+Hero editorial com mapa interativo de marca/tecnologia/dados; detalhes mais legíveis e organização visual consistente; temas e idiomas preservados; revisão da mensagem de contato antes de abrir o aplicativo; navegação, formulários e responsividade verificados. Não foram inventados resultados do cliente nem serviços adicionais.
 
-## Tema
+## Editar o conteúdo e regenerar
 
-O visitante pode alternar entre claro e escuro pelo botão no Header. A escolha é preservada ao navegar entre páginas e idiomas. Na primeira visita, o site acompanha a preferência do sistema operacional.
+- `content/pt.json` e `content/en.json`: textos.
+- `content/site.json`: URL e informações institucionais.
+- `templates/`: estrutura e componentes.
+- `assets/css/`: estilos; `assets/js/`: interações.
 
-## Executar localmente
+Depois de editar os fontes:
 
 ```bash
-cd Site-Polary
-python3 -m http.server 8000
+python3 build.py --sync
+python3 tests/check_site.py
 ```
 
-Acesse:
+`--sync` atualiza os arquivos públicos na raiz para subir ao GitHub. `dist/` é a cópia gerada; não precisa enviá-la quando publicar a raiz. Não edite apenas um HTML gerado se pretende usar o build depois, pois ele será regenerado a partir dos templates.
 
-- `http://localhost:8000/`
-- `http://localhost:8000/en/`
+Para outro domínio ou subpasta, altere `url` em `content/site.json` e execute o build. Também é possível usar `POLARY_URL=https://example.com/ python3 build.py --sync` no Bash. A URL atual tem `/polary/` porque é um site de projeto do GitHub Pages.
 
-## Antes de publicar
+## Testes
 
-1. Validar domínio e e-mail oficiais.
-2. Conectar o formulário a um backend ou serviço de formulários se desejado.
-3. Configurar Analytics/Tag Manager real.
-4. Adicionar screenshots reais do case quando disponíveis.
-5. Adicionar WhatsApp somente quando houver número oficial confirmado.
-6. Criar política de privacidade e termos com conteúdo juridicamente validado.
+```bash
+python3 tests/check_site.py
+python3 tests/test_deployment.py
+node --check assets/js/main.js
+node --check assets/js/theme-init.js
+```
 
-## Princípio do projeto
+`test_deployment.py` valida as duas situações: domínio na raiz e domínio com `/polary/`. Ele restaura o build padrão ao terminar. A matriz visual é ferramenta de desenvolvimento local, não integra o pacote publicado.
 
-> O site não tenta provar que a Polary sabe tecnologia. Ele mostra que a Polary sabe investigar, estruturar e resolver problemas usando tecnologia.
+## Limites
+
+O e-mail foi preservado do projeto recebido; confirme sua titularidade e recebimento. O formulário prepara texto no navegador, sem backend de envio. O painel administrativo e o sistema PHP/MySQL da barbearia não fazem parte deste repositório. Veja os requisitos do TCC e as pendências reais em `docs/REQUISITOS_TCC.md`. Não há números de WhatsApp, endereços ou depoimentos inventados.

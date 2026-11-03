@@ -165,7 +165,7 @@
   "contactTitle": "Where should we go from here?",
   "contactIntro": "Tell us where your business is today and what needs to improve. We’ll start by understanding your situation.",
   "emailLabel": "Prefer to email us directly?",
-  "formNote": "Fill this out to prepare a message in your email app. You review it and send it there.",
+  "formNote": "Prepare your message, review the details, then open your email app or copy the text.",
   "labels": [
     "Your name",
     "Your email",
@@ -198,7 +198,7 @@
   "privacySections": [
     [
       "Contact form",
-      "The form prepares a message in your email app. This version does not send or store its fields on a Polary server. The message is only sent when you complete the process in your email app. Avoid including passwords or sensitive information."
+      "The form prepares a message for you to review on this page. You can copy the text or open your email app. This version does not send or store the fields on a Polary server. The message is only sent when you complete the process in your email app. Avoid including passwords or sensitive information."
     ],
     [
       "Theme preference",
@@ -307,5 +307,26 @@
   "sourcesText": "The interview with Paulo, final course project documentation, strategic diagnoses, market research, planning and system requirements. Infrastructure proposals and market hypotheses are presented as proposals, not as deployment results.",
   "caseCta": "Does your business face a similar challenge?",
   "caseCtaText": "Let’s understand your routine and identify a possible path forward.",
-  "returnProjects": "Back to projects"
+  "returnProjects": "Back to projects",
+  "concept": {
+    "label": "A connected view of your business",
+    "heading": "Every part connects.",
+    "subheading": "One shared direction.",
+    "hint": "Explore the connections",
+    "types": [
+      "Brand",
+      "Technology",
+      "Data"
+    ],
+    "descriptions": [
+      "Positioning and identity that communicate the value of your business consistently.",
+      "Processes and systems that organize everyday work for the people on your team.",
+      "Structured information to understand the business and support your next decisions."
+    ],
+    "pill": "Strategy that connects",
+    "foot": "CONNECTED VIEW / POLARY",
+    "title": "One direction. Three connected areas."
+  },
+  "contactPreviewTitle": "Your message is ready to review.",
+  "contactOpenEmail": "Open email app"
 }
