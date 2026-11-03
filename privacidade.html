@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title data-en="Privacy Policy — Polary">Política de Privacidade — Polary</title>
+    <meta name="description"
+        content="Política de Privacidade da Polary: quais dados coletamos, para que usamos, com quem compartilhamos e como exercer seus direitos."
+        data-en-content="Polary Privacy Policy: what data we collect, how we use it, who we share it with and how to exercise your rights.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#112033">
+
+    <link rel="canonical" href="https://polary.com.br/privacidade.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://polary.com.br/privacidade.html">
+    <link rel="alternate" hreflang="en" href="https://polary.com.br/privacidade.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://polary.com.br/privacidade.html">
+
+    <meta property="og:site_name" content="Polary">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://polary.com.br/privacidade.html">
+    <meta property="og:title" content="Política de Privacidade — Polary"
+        data-en-content="Privacy Policy — Polary">
+    <meta property="og:description"
+        content="Quais dados coletamos, para que usamos e como exercer seus direitos."
+        data-en-content="What data we collect, how we use it and how to exercise your rights.">
+    <meta property="og:image" content="https://polary.com.br/assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Polary — dados que guiam, marcas que lideram"
+        data-en-content="Polary — data that guides, brands that lead">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/images/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <script>
+        (function () {
+            var root = document.documentElement;
+            try {
+                var theme = localStorage.getItem('polary:theme');
+                if (theme !== 'light' && theme !== 'dark') {
+                    theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+                }
+                root.dataset.theme = theme;
+                var meta = document.querySelector('meta[name="theme-color"]');
+                if (meta) meta.setAttribute('content', theme === 'light' ? '#f3f3f3' : '#112033');
+
+                var params = new URLSearchParams(window.location.search);
+                var lang = params.get('lang') || localStorage.getItem('polary:lang');
+                root.lang = lang === 'en' ? 'en' : 'pt-BR';
+            } catch (error) { /* armazenamento ou URL indisponível */ }
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/styles.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#conteudo" data-en="Skip to content">Ir para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="container header__bar">
+            <a class="brand" href="index.html" aria-label="Polary — início" data-en-aria-label="Polary — home">
+                <img class="brand__logo brand__logo--dark" src="assets/images/logo-exp-white.svg" alt="" width="142"
+                    height="34">
+                <img class="brand__logo brand__logo--light" src="assets/images/logo-exp-dark.svg" alt="" width="142"
+                    height="34">
+            </a>
+
+            <div class="header__tools header__tools--end">
+                <div class="lang" role="group" aria-label="Idioma" data-en-aria-label="Language">
+                    <button type="button" data-lang="pt" lang="pt-BR" aria-pressed="true">PT</button>
+                    <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+                </div>
+
+                <button class="icon-btn theme-toggle" type="button" aria-label="Ativar tema claro"
+                    data-en-aria-label="Switch to light theme">
+                    <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4.2"></circle>
+                        <path
+                            d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6">
+                        </path>
+                    </svg>
+                    <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M20.4 14.2A8.5 8.5 0 0 1 9.8 3.6 8.5 8.5 0 1 0 20.4 14.2Z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <section class="page">
+            <div class="container">
+                <div class="prose">
+                    <p class="eyebrow" data-en="Legal">Jurídico</p>
+                    <h1 data-en="Privacy Policy">Política de Privacidade</h1>
+                    <p class="page__meta" data-en="Last updated: November 3, 2026">Última atualização: 3 de novembro de
+                        2026</p>
+
+                    <p data-en="This policy explains, in plain language, which data the Polary website collects, why we collect it and how you can exercise your rights under the Brazilian General Data Protection Law (LGPD).">
+                        Esta política explica, de forma direta, quais dados o site da Polary coleta, por que coletamos e
+                        como você pode exercer seus direitos previstos na Lei Geral de Proteção de Dados (LGPD).</p>
+
+                    <h2 data-en="Who we are">Quem somos</h2>
+                    <p><span data-en="Polary is a two-person studio that provides branding, websites and custom systems for small service and care businesses. For privacy matters, contact us at">A
+                            Polary é um estúdio de duas pessoas que entrega branding, sites e sistemas sob medida para
+                            pequenos negócios de serviço e atendimento. Para assuntos de privacidade, fale com a gente
+                            em</span> <a href="mailto:contato@polary.com.br" data-email-link
+                            data-email-text>contato@polary.com.br</a>.</p>
+
+                    <h2 data-en="Data we collect">Dados que coletamos</h2>
+                    <ul>
+                        <li>
+                            <strong data-en="Contact form:">Formulário de contato:</strong>
+                            <span data-en="name, email, selected need, message and consent confirmation.">nome, e-mail,
+                                necessidade selecionada, mensagem e confirmação de consentimento.</span>
+                        </li>
+                        <li>
+                            <strong data-en="Email and WhatsApp:">E-mail e WhatsApp:</strong>
+                            <span data-en="when you choose these channels, the data you send is subject to the services used (email provider and WhatsApp/Meta).">quando
+                                você escolhe esses canais, os dados enviados ficam sujeitos aos serviços usados
+                                (provedor de e-mail e WhatsApp/Meta).</span>
+                        </li>
+                        <li>
+                            <strong data-en="Site preferences:">Preferências do site:</strong>
+                            <span data-en="light/dark theme and language are saved in your browser (localStorage). They are not identifying personal data.">tema
+                                claro/escuro e idioma ficam salvos no seu navegador (localStorage). Não são dados
+                                pessoais de identificação.</span>
+                        </li>
+                        <li>
+                            <strong data-en="Visit analytics:">Análise de visitas:</strong>
+                            <span data-en="only if you accept the banner, we may use Plausible (cookie-free) or Google Analytics (with cookies), according to the current configuration.">somente
+                                se você aceitar o aviso, podemos usar Plausible (sem cookies) ou Google Analytics (com
+                                cookies), conforme a configuração vigente.</span>
+                        </li>
+                    </ul>
+
+                    <h2 data-en="How we use it">Para que usamos</h2>
+                    <p data-en="We use the data to reply to your contact, understand your need and prepare a proposal. We do not sell data and we do not add you to newsletters without your request.">
+                        Usamos os dados para responder ao seu contato, entender sua necessidade e preparar uma proposta.
+                        Não vendemos dados e não incluímos você em listas de novidades sem pedido.</p>
+
+                    <h2 data-en="Legal basis">Base legal</h2>
+                    <p data-en="The contact form is processed based on your consent (LGPD, art. 7, I) and on the legitimate interest of replying to commercial requests. You may withdraw consent at any time.">
+                        O tratamento do formulário ocorre com base no seu consentimento (LGPD, art. 7º, I) e no legítimo
+                        interesse em responder a solicitações comerciais. Você pode revogar o consentimento a qualquer
+                        momento.</p>
+
+                    <h2 data-en="Sharing and storage">Compartilhamento e armazenamento</h2>
+                    <p data-en="Form data may pass through the configured submission service (for example, Formspree, Web3Forms or a serverless function) and Polary's email provider. We keep the information only for as long as needed to reply and record the contact. After that, it is deleted or anonymized.">
+                        Os dados do formulário podem passar pelo serviço de envio configurado (por exemplo, Formspree,
+                        Web3Forms ou uma função serverless) e pelo provedor de e-mail da Polary. Mantemos as informações
+                        apenas pelo tempo necessário para responder e registrar o contato. Depois disso, são excluídas ou
+                        anonimizadas.</p>
+
+                    <h2 data-en="Your rights">Seus direitos</h2>
+                    <p><span data-en="You may request access, correction, deletion, portability or withdrawal of consent. Write to">Você
+                            pode solicitar acesso, correção, exclusão, portabilidade ou revogação do consentimento.
+                            Escreva para</span> <a href="mailto:contato@polary.com.br" data-email-link
+                            data-email-text>contato@polary.com.br</a> <span
+                            data-en="and we will reply through the same channel.">e responderemos pelo mesmo
+                            canal.</span></p>
+
+                    <h2 data-en="Cookies and local storage">Cookies e armazenamento local</h2>
+                    <p data-en="The site does not use its own cookies for basic features. We only store theme and language preferences in your browser. If analytics is enabled and accepted, it may use cookies according to the provider. You can clear this data in your browser settings.">
+                        O site não usa cookies próprios para funcionalidades básicas. Guardamos apenas as preferências de
+                        tema e idioma no seu navegador. Se a análise de visitas estiver ativa e for aceita, ela pode usar
+                        cookies conforme o provedor. Você pode limpar esses dados nas configurações do navegador.</p>
+
+                    <h2 data-en="Updates">Atualizações</h2>
+                    <p data-en="We may update this policy to reflect changes to the site or the law. The date at the top indicates the last revision.">
+                        Podemos atualizar esta política para refletir mudanças no site ou na lei. A data no topo indica a
+                        última revisão.</p>
+
+                    <p class="page__back">
+                        <a class="link-arrow" href="index.html" data-en="Back to the site">Voltar ao site</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer__legal">
+            <span data-en="&copy; 2026 Polary. All rights reserved.">&copy; 2026 Polary. Todos os direitos
+                reservados.</span>
+            <a href="index.html" data-en="Home">Início</a>
+            <a href="mailto:contato@polary.com.br" data-email-link data-email-text>contato@polary.com.br</a>
+        </div>
+    </footer>
+
+    <script src="assets/config.js" defer></script>
+    <script src="assets/main.js" defer></script>
+</body>
+
+</html>

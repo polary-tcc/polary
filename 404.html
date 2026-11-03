@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title data-en="Page not found — Polary">Página não encontrada — Polary</title>
+    <meta name="description"
+        content="A página que você procura não existe ou mudou de endereço. Volte ao início do site da Polary."
+        data-en-content="The page you are looking for does not exist or has moved. Return to the Polary home page.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#112033">
+
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/images/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <script>
+        (function () {
+            var root = document.documentElement;
+            try {
+                var theme = localStorage.getItem('polary:theme');
+                if (theme !== 'light' && theme !== 'dark') {
+                    theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+                }
+                root.dataset.theme = theme;
+                var meta = document.querySelector('meta[name="theme-color"]');
+                if (meta) meta.setAttribute('content', theme === 'light' ? '#f3f3f3' : '#112033');
+
+                var params = new URLSearchParams(window.location.search);
+                var lang = params.get('lang') || localStorage.getItem('polary:lang');
+                root.lang = lang === 'en' ? 'en' : 'pt-BR';
+            } catch (error) { /* armazenamento ou URL indisponível */ }
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/styles.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#conteudo" data-en="Skip to content">Ir para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="container header__bar">
+            <a class="brand" href="index.html" aria-label="Polary — início" data-en-aria-label="Polary — home">
+                <img class="brand__logo brand__logo--dark" src="assets/images/logo-exp-white.svg" alt="" width="142"
+                    height="34">
+                <img class="brand__logo brand__logo--light" src="assets/images/logo-exp-dark.svg" alt="" width="142"
+                    height="34">
+            </a>
+
+            <div class="header__tools header__tools--end">
+                <div class="lang" role="group" aria-label="Idioma" data-en-aria-label="Language">
+                    <button type="button" data-lang="pt" lang="pt-BR" aria-pressed="true">PT</button>
+                    <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+                </div>
+
+                <button class="icon-btn theme-toggle" type="button" aria-label="Ativar tema claro"
+                    data-en-aria-label="Switch to light theme">
+                    <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4.2"></circle>
+                        <path
+                            d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6">
+                        </path>
+                    </svg>
+                    <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M20.4 14.2A8.5 8.5 0 0 1 9.8 3.6 8.5 8.5 0 1 0 20.4 14.2Z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <section class="error-page">
+            <div class="container">
+                <p class="error-page__code">404</p>
+                <h1 data-en="Page not found">Página não encontrada</h1>
+                <p data-en="The address may have changed, or the page no longer exists.">O endereço pode ter mudado ou
+                    a página não existe mais.</p>
+                <a class="btn btn--primary" href="index.html" data-en="Back to home">Voltar ao início</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer__legal">
+            <span data-en="&copy; 2026 Polary. All rights reserved.">&copy; 2026 Polary. Todos os direitos
+                reservados.</span>
+            <a href="index.html" data-en="Home">Início</a>
+            <a href="privacidade.html" data-en="Privacy Policy">Política de Privacidade</a>
+        </div>
+    </footer>
+
+    <script src="assets/config.js" defer></script>
+    <script src="assets/main.js" defer></script>
+</body>
+
+</html>

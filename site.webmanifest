@@ -1,1 +1,24 @@
-git{"name": "Polary", "short_name": "Polary", "start_url": "/polary/", "scope": "/polary/", "display": "browser", "background_color": "#fafaf8", "theme_color": "#2563eb", "icons": [{"src": "/polary/assets/images/site/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}]}
+{
+    "name": "Polary",
+    "short_name": "Polary",
+    "description": "Branding, sites de alta conversão e sistemas sob medida para pequenos negócios de serviço e atendimento.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#112033",
+    "theme_color": "#112033",
+    "lang": "pt-BR",
+    "icons": [
+        {
+            "src": "assets/images/favicon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/images/favicon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}
