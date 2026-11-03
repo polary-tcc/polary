@@ -1,391 +1,155 @@
+'use strict';
 (() => {
-  const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches;
-  const isEnglish = document.documentElement.lang
-    .toLowerCase()
-    .startsWith("en");
-  const header = document.querySelector("[data-header]");
-  const menuToggle = document.querySelector("[data-menu-toggle]");
-  const mobileMenu = document.querySelector("[data-mobile-menu]");
-  const navLinks = [
-    ...document.querySelectorAll('.desktop-nav a, .mobile-nav a[href^="#"]'),
-  ];
-
-  const ui = isEnglish
-    ? {
-        openMenu: "Open menu",
-        closeMenu: "Close menu",
-        nameRequired: "Enter your name.",
-        emailRequired: "Enter your email.",
-        emailInvalid: "Enter a valid email address.",
-        needRequired: "Select an option.",
-        reviewFields: "Review the highlighted fields.",
-        openingEmail: "Email prepared. If your email app opens, review and send it there. Otherwise use the direct email link.",
-        projectSubject: "Polary project",
-        bodyName: "Name",
-        bodyCompany: "Company",
-        bodyEmail: "Email",
-        bodyWhatsapp: "WhatsApp",
-        bodyNeed: "Need",
-        bodyMessage: "Message",
-        notProvided: "Not provided",
-        noMessage: "No additional message.",
-        plans: {
-          presenca: "Presence",
-          gestao: "Management",
-          ecossistema: "Ecosystem",
-        },
-        proposalMessage: (plan) =>
-          `Hello! I found Polary through the website and I'm interested in the ${plan} plan. I'd like to talk about my company's needs and request a proposal.`,
-        diagnosisMessage:
-          "Hello! I found Polary through the website and I'd like to talk to understand which solutions make sense for my company.",
-      }
-    : {
-        openMenu: "Abrir menu",
-        closeMenu: "Fechar menu",
-        nameRequired: "Informe seu nome.",
-        emailRequired: "Informe seu e-mail.",
-        emailInvalid: "Informe um e-mail válido.",
-        needRequired: "Selecione uma opção.",
-        reviewFields: "Revise os campos destacados.",
-        openingEmail: "E-mail preparado. Se o aplicativo abrir, revise e envie por lá. Caso contrário, use o link de contato direto.",
-        projectSubject: "Projeto Polary",
-        bodyName: "Nome",
-        bodyCompany: "Empresa",
-        bodyEmail: "E-mail",
-        bodyWhatsapp: "WhatsApp",
-        bodyNeed: "Necessidade",
-        bodyMessage: "Mensagem",
-        notProvided: "Não informado",
-        noMessage: "Sem mensagem adicional.",
-        plans: {
-          presenca: "Presença",
-          gestao: "Gestão",
-          ecossistema: "Ecossistema",
-        },
-        proposalMessage: (plan) =>
-          `Olá! Conheci a Polary pelo site e tenho interesse no plano ${plan}. Gostaria de conversar sobre as necessidades da minha empresa e solicitar uma proposta.`,
-        diagnosisMessage:
-          "Olá! Conheci a Polary pelo site e gostaria de conversar para entender quais soluções fazem sentido para a minha empresa.",
-      };
-
-  const setHeaderState = () => {
-    header?.classList.toggle("is-scrolled", window.scrollY > 12);
+  const en = document.documentElement.lang.startsWith('en');
+  const ui = en ? {
+    open: 'Open menu', close: 'Close menu', dark: 'Switch to dark theme', light: 'Switch to light theme',
+    required: 'Complete this field.', name: 'Enter a name with at least two characters.', email: 'Enter a valid email address.',
+    long: 'This text exceeds the allowed length.', review: 'Review the highlighted fields.', subject: 'A project with Polary',
+    ready: 'Your email is ready. Review and send it in your email app. If the app did not open, copy the message and email us directly.',
+    copied: 'Message copied. Paste it into your email app.', copyFailed: 'Copy this message and paste it into your email app:', message: 'Message', noMessage: 'No additional message.',
+  } : {
+    open: 'Abrir menu', close: 'Fechar menu', dark: 'Ativar tema escuro', light: 'Ativar tema claro',
+    required: 'Preencha este campo.', name: 'Informe um nome com pelo menos dois caracteres.', email: 'Informe um e-mail válido.',
+    long: 'O texto ultrapassa o limite permitido.', review: 'Revise os campos destacados.', subject: 'Um projeto com a Polary',
+    ready: 'E-mail preparado. Revise e envie no seu aplicativo. Se ele não abriu, copie a mensagem e use o contato direto.',
+    copied: 'Mensagem copiada. Cole no seu aplicativo de e-mail.', copyFailed: 'Copie esta mensagem e cole no seu aplicativo de e-mail:', message: 'Mensagem', noMessage: 'Sem mensagem adicional.',
   };
-  setHeaderState();
-  window.addEventListener("scroll", setHeaderState, { passive: true });
-
-  const closeMenu = ({ restoreFocus = false } = {}) => {
-    if (!menuToggle || !mobileMenu) return;
-    const wasOpen = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", ui.openMenu);
-    mobileMenu.hidden = true;
-    document.body.classList.remove("menu-open");
-    if (restoreFocus && wasOpen) menuToggle.focus();
+  const root = document.documentElement;
+  const themeButton = document.querySelector('.theme-toggle');
+  const media = matchMedia('(prefers-color-scheme: dark)');
+  const applyTheme = (theme, persist = false) => {
+    root.dataset.theme = theme;
+    document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0e141d' : '#fafaf8';
+    themeButton?.setAttribute('aria-label', theme === 'dark' ? ui.light : ui.dark);
+    themeButton?.setAttribute('aria-pressed', String(theme === 'dark'));
+    if (persist) { try { localStorage.setItem('polary-theme', theme); } catch (_) { /* Session theme still works. */ } }
   };
-
-  menuToggle?.addEventListener("click", () => {
-    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", String(!expanded));
-    menuToggle.setAttribute(
-      "aria-label",
-      expanded ? ui.openMenu : ui.closeMenu,
-    );
-    mobileMenu.hidden = expanded;
-    document.body.classList.toggle("menu-open", !expanded);
-    if (!expanded) {
-      requestAnimationFrame(() =>
-        mobileMenu.querySelector("a, button")?.focus(),
-      );
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (
-      event.key === "Escape" &&
-      menuToggle?.getAttribute("aria-expanded") === "true"
-    ) {
-      closeMenu({ restoreFocus: true });
-    }
-  });
-
-  window.addEventListener(
-    "resize",
-    () => {
-      if (
-        window.innerWidth >= 1160 &&
-        menuToggle?.getAttribute("aria-expanded") === "true"
-      )
-        closeMenu();
-    },
-    { passive: true },
-  );
-
-  // Keep native hash/history behavior. Only transfer focus and close the menu.
-  document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener("click", (event) => {
-      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      const target = document.getElementById(link.hash.slice(1));
-      if (!target) return;
-      closeMenu();
-      if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
-      target.focus({ preventScroll: true });
-    });
-  });
-  mobileMenu?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => closeMenu());
-  });
-  document.addEventListener("click", (event) => {
-    if (!header?.contains(event.target)) closeMenu();
-  });
-  header?.addEventListener("focusout", () => {
-    requestAnimationFrame(() => {
-      if (!header.contains(document.activeElement)) closeMenu();
-    });
-  });
-
-  const observedSections = [...document.querySelectorAll("main section[id]")];
-  if ("IntersectionObserver" in window) {
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          navLinks.forEach((link) => {
-            const active = link.getAttribute("href") === `#${entry.target.id}`;
-            link.classList.toggle("is-active", active);
-            if (active) link.setAttribute("aria-current", "location");
-            else link.removeAttribute("aria-current");
-          });
-        });
-      },
-      { rootMargin: "-35% 0px -55% 0px", threshold: 0 },
-    );
-    observedSections.forEach((section) => sectionObserver.observe(section));
+  applyTheme(root.dataset.theme);
+  if (themeButton) {
+    themeButton.hidden = false;
+    themeButton.addEventListener('click', () => applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark', true));
   }
-
-  // Content remains visible even if JavaScript or observers are unavailable.
-  const track = (name, attributes = {}) => {
+  media.addEventListener('change', event => {
+    let stored;
+    try { stored = localStorage.getItem('polary-theme'); } catch (_) { /* Follow system preference. */ }
+    if (!['light', 'dark'].includes(stored)) applyTheme(event.matches ? 'dark' : 'light');
+  });
+  // Non-modal disclosure navigation: native links, Escape, focus return and breakpoint reset.
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('#mobile-menu');
+  const header = document.querySelector('.site-header');
+  const narrow = matchMedia('(max-width: 850px)');
+  const close = (focus = false) => {
+    const wasOpen = toggle?.getAttribute('aria-expanded') === 'true';
+    if (toggle) { toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', ui.open); }
+    if (menu) menu.hidden = true;
+    if (focus && wasOpen) toggle.focus();
+  };
+  const syncMenu = () => { close(); if (toggle) toggle.hidden = !narrow.matches; };
+  document.body.classList.add('js-ready');
+  syncMenu();
+  narrow.addEventListener('change', syncMenu);
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? ui.close : ui.open);
+    menu.hidden = !open;
+  });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') close(true); });
+  document.addEventListener('click', event => { if (!header.contains(event.target)) close(); });
+  header?.addEventListener('focusout', () => requestAnimationFrame(() => { if (!header.contains(document.activeElement)) close(); }));
+  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => close()));
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    const target = document.getElementById(a.hash.slice(1));
+    if (!target) return;
+    target.setAttribute('tabindex', '-1');
+    target.focus({preventScroll: true});
+  }));
+  // Preserve section awareness without a scroll listener on every frame.
+  if ('IntersectionObserver' in window) {
+    const nav = [...document.querySelectorAll('.primary-nav a, .mobile-nav a')];
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        nav.forEach(a => {
+          if (a.getAttribute('href') === `#${entry.target.id}`) a.setAttribute('aria-current', 'location');
+          else a.removeAttribute('aria-current');
+        });
+      }
+    }, {rootMargin: '-15% 0px -65% 0px'});
+    document.querySelectorAll('main section[id]').forEach(section => observer.observe(section));
+  }
+  // Generic events remain in memory; no form values, identity or network collector.
+  const track = (name, location = '') => {
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({event: "polary_interaction", interaction_name: name, ...attributes});
+    window.dataLayer.push({event: 'polary_interaction', interaction_name: name, interaction_location: location});
+    if (window.dataLayer.length > 100) window.dataLayer.shift();
   };
-  document.querySelectorAll(".faq-item button").forEach((button) => {
-    const answer = document.getElementById(button.getAttribute("aria-controls"));
-    if (answer) { answer.hidden = true; button.setAttribute("aria-expanded", "false"); }
-  });
-
-  document.querySelectorAll(".faq-item button").forEach((button) => {
-    button.addEventListener("click", () => {
-      const expanded = button.getAttribute("aria-expanded") === "true";
-      const answer = document.getElementById(
-        button.getAttribute("aria-controls"),
-      );
-      if (!answer) return;
-
-      document
-        .querySelectorAll('.faq-item button[aria-expanded="true"]')
-        .forEach((otherButton) => {
-          if (otherButton === button) return;
-          otherButton.setAttribute("aria-expanded", "false");
-          const otherAnswer = document.getElementById(
-            otherButton.getAttribute("aria-controls"),
-          );
-          if (otherAnswer) otherAnswer.hidden = true;
-        });
-
-      button.setAttribute("aria-expanded", String(!expanded));
-      answer.hidden = expanded;
-      if (!expanded) track("faq_open", {faq_id: answer.id});
-    });
-  });
-
-  const form = document.getElementById("contact-form");
-  if (form) {
-    form.noValidate = true;
-    form.querySelector('[type="submit"]').disabled = false;
-  }
-  let formStarted = false;
-  form?.addEventListener("input", () => {
-    if (!formStarted) { formStarted = true; track("form_start"); }
-  });
-  const status = document.getElementById("form-status");
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  const showFieldError = (field, message) => {
-    const error = document.getElementById(`${field.id}-error`);
-    field.setAttribute("aria-invalid", "true");
-    if (error) error.textContent = message;
+  document.querySelectorAll('.button[href], .text-link[href]').forEach(a => a.addEventListener('click', () => track('cta_click', a.closest('section')?.id || 'navigation')));
+  document.querySelectorAll('.faq-list details').forEach((item, index) => item.addEventListener('toggle', () => { if (item.open) track('faq_open', String(index + 1)); }));
+  const form = document.querySelector('#contact-form');
+  if (!form) return;
+  form.noValidate = true;
+  form.querySelector('[type="submit"]').disabled = false;
+  const status = document.querySelector('#form-status');
+  const copy = form.querySelector('.copy-button');
+  const fields = ['nome', 'email', 'necessidade', 'mensagem'].map(name => form.elements.namedItem(name));
+  let body = '';
+  let started = false;
+  const clear = field => {
+    field.removeAttribute('aria-invalid');
+    document.getElementById(`${field.id}-error`).textContent = '';
   };
-
-  const clearErrors = () => {
-    form
-      ?.querySelectorAll('[aria-invalid="true"]')
-      .forEach((field) => field.removeAttribute("aria-invalid"));
-    form?.querySelectorAll(".field-error").forEach((error) => {
-      error.textContent = "";
-    });
-    if (status) {
-      status.textContent = "";
-      status.className = "form-status";
-    }
-  };
-
-  form?.querySelectorAll("input, select, textarea").forEach((field) => {
-    field.addEventListener("input", () => {
-      if (field.getAttribute("aria-invalid") !== "true") return;
-      field.removeAttribute("aria-invalid");
-      const error = document.getElementById(`${field.id}-error`);
-      if (error) error.textContent = "";
-      if (status) {
-        status.textContent = "";
-        status.className = "form-status";
+  form.addEventListener('input', event => {
+    if (!started) { track('form_start', 'contato'); started = true; }
+    if (fields.includes(event.target)) clear(event.target);
+    status.textContent = ''; status.classList.remove('is-error');
+    copy.hidden = true;
+  });
+  document.querySelectorAll('[data-need]').forEach(a => a.addEventListener('click', () => {
+    const mapping = [1, 3, 5];
+    form.elements.necessidade.value = String(mapping[Number(a.dataset.need)]);
+    clear(form.elements.necessidade);
+  }));
+  const validate = () => {
+    let first;
+    fields.forEach(field => {
+      clear(field);
+      const value = field.value.trim();
+      let error = '';
+      if (field.required && !value) error = ui.required;
+      else if (field.name === 'nome' && value.length < 2) error = ui.name;
+      else if (field.type === 'email' && (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) || field.validity.typeMismatch || /[\r\n]/.test(value))) error = ui.email;
+      else if (field.maxLength > 0 && value.length > field.maxLength) error = ui.long;
+      else if (field.name === 'necessidade' && !['1','2','3','4','5','6','7'].includes(value)) error = ui.required;
+      if (error) {
+        field.setAttribute('aria-invalid', 'true');
+        document.getElementById(`${field.id}-error`).textContent = error;
+        first ||= field;
       }
     });
-  });
-
-  form?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    clearErrors();
-
-    const honeypot = form.elements.website?.value;
-    if (honeypot) return;
-
-    const name = form.elements.nome;
-    const email = form.elements.email;
-    const need = form.elements.necessidade;
-    let valid = true;
-
-    if (!name.value.trim()) {
-      showFieldError(name, ui.nameRequired);
-      valid = false;
-    }
-    if (!email.value.trim()) {
-      showFieldError(email, ui.emailRequired);
-      valid = false;
-    } else if (!emailRegex.test(email.value.trim())) {
-      showFieldError(email, ui.emailInvalid);
-      valid = false;
-    }
-    if (!need.value) {
-      showFieldError(need, ui.needRequired);
-      valid = false;
-    }
-
-    if (!valid) {
-      track("form_validation_error");
-      const firstInvalid = form.querySelector('[aria-invalid="true"]');
-      firstInvalid?.focus();
-      if (status) {
-        status.textContent = ui.reviewFields;
-        status.classList.add("is-error");
-      }
-      return;
-    }
-
-    const needLabel =
-      need.selectedOptions?.[0]?.textContent.trim() || need.value;
-    const subject = `${ui.projectSubject} — ${needLabel}`;
-    const body = [
-      `${ui.bodyName}: ${name.value.trim()}`,
-      `${ui.bodyCompany}: ${form.elements.empresa?.value.trim() || ui.notProvided}`,
-      `${ui.bodyEmail}: ${email.value.trim()}`,
-      `${ui.bodyWhatsapp}: ${form.elements.whatsapp?.value.trim() || ui.notProvided}`,
-      `${ui.bodyNeed}: ${needLabel}`,
-      "",
-      `${ui.bodyMessage}:`,
-      form.elements.mensagem.value.trim() || ui.noMessage,
-    ].join("\n");
-
-    const mailto = `mailto:contato@polary.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    if (status) {
-      status.textContent = ui.openingEmail;
-      status.classList.add("is-pending");
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({event: "polary_interaction", interaction_name: "email_client_open"});
-    }
-    window.location.href = mailto;
-  });
-
-  const collapsePanel = (panel) => {
-    panel.hidden = true;
-    panel.classList.remove("is-open");
+    if (first) { first.focus(); status.textContent = ui.review; status.classList.add('is-error'); track('form_validation_error', 'contato'); }
+    return !first;
   };
-  const expandPanel = (panel) => {
-    panel.hidden = false;
-    panel.classList.add("is-open");
-  };
-
-  document.querySelectorAll(".plan-toggle").forEach((button) => {
-    button.addEventListener("click", () => {
-      const panel = document.getElementById(
-        button.getAttribute("aria-controls"),
-      );
-      if (!panel) return;
-      const expanded = button.getAttribute("aria-expanded") === "true";
-      button.setAttribute("aria-expanded", String(!expanded));
-      const labelClosed = button.querySelector(
-        ".plan-toggle-label--closed",
-      );
-      const labelOpen = button.querySelector(".plan-toggle-label--open");
-      if (labelClosed) labelClosed.hidden = !expanded;
-      if (labelOpen) labelOpen.hidden = expanded;
-      if (expanded) collapsePanel(panel);
-      else expandPanel(panel);
-    });
+  form.addEventListener('submit', event => {
+    event.preventDefault(); status.textContent = ''; status.classList.remove('is-error');
+    if (!validate()) return;
+    body = fields.map(field => {
+      const label = form.querySelector(`label[for="${field.id}"]`).childNodes[0].textContent.trim();
+      const value = field.tagName === 'SELECT' ? field.selectedOptions[0].textContent : (field.value.trim() || ui.noMessage);
+      return `${label}: ${value}`;
+    }).join('\n\n');
+    const email = document.querySelector('.direct-contact a').getAttribute('href');
+    copy.hidden = false;
+    status.textContent = ui.ready;
+    track('email_client_open', 'contato');
+    // This requests the local mail client; it does not claim delivery.
+    window.location.href = `${email}?subject=${encodeURIComponent(ui.subject)}&body=${encodeURIComponent(body)}`;
   });
-
-  const compareToggle = document.querySelector(".compare-toggle");
-  const comparePanel = document.getElementById("plan-compare-panel");
-  if (compareToggle && comparePanel) {
-    compareToggle.addEventListener("click", () => {
-      const expanded = compareToggle.getAttribute("aria-expanded") === "true";
-      compareToggle.setAttribute("aria-expanded", String(!expanded));
-      if (expanded) collapsePanel(comparePanel);
-      else expandPanel(comparePanel);
-    });
-  }
-
-  const focusMessage = () => {
-    window.setTimeout(() => {
-      form?.elements.mensagem?.focus();
-    }, prefersReducedMotion ? 0 : 480);
-  };
-
-  document.querySelectorAll("[data-plan-proposal]").forEach((link) => {
-    link.addEventListener("click", () => {
-      const planName = ui.plans[link.dataset.plan];
-      if (form && planName) {
-        if (!form.elements.mensagem.value.trim()) form.elements.mensagem.value = ui.proposalMessage(planName);
-        focusMessage();
-      }
-    });
-  });
-
-  document.querySelectorAll("[data-plan-diagnosis]").forEach((link) => {
-    link.addEventListener("click", () => {
-      if (form) {
-        if (!form.elements.mensagem.value.trim()) form.elements.mensagem.value = ui.diagnosisMessage;
-        focusMessage();
-      }
-    });
-  });
-
-  const year = document.getElementById("current-year");
-  if (year) year.textContent = new Date().getFullYear();
-
-  document.querySelectorAll("[data-event]").forEach((element) => {
-    element.addEventListener("click", () => {
-      const eventName = element.dataset.event;
-      window.dataLayer = window.dataLayer || [];
-      const interaction = {
-        event: "polary_interaction",
-        interaction_name: eventName,
-      };
-      interaction.interaction_location = element.closest("section")?.id || (element.closest("header") ? "header" : "footer");
-      if (element.dataset.plan) interaction.interaction_plan =
-        element.dataset.plan;
-      window.dataLayer.push(interaction);
-    });
+  copy.addEventListener('click', async () => {
+    if (!validate()) return;
+    try { await navigator.clipboard.writeText(body); status.textContent = ui.copied; }
+    catch (_) { status.textContent = `${ui.copyFailed}\n\n${body}`; }
   });
 })();

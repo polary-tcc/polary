@@ -1,0 +1,10 @@
+{
+  "email": "contato@polary.com.br",
+  "phone": null,
+  "address": null,
+  "tester": null,
+  "version": "2.0.0",
+  "updated": "2026-10-31",
+  "origin": "https://polary-direcao-marca-dados.politecgabriel.chatgpt.site",
+  "founders": [{"name": "Gabriel Sales Camargo", "role": {"pt": "Desenvolvimento e dados", "en": "Development and data"}}, {"name": "Leonardo de Camargo Faria", "role": {"pt": "Design e comunicação", "en": "Design and communication"}}]
+}

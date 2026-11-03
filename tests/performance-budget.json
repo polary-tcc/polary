@@ -1,0 +1,37 @@
+{
+  "note": "Gzip estimates, not observed transfer or Core Web Vitals.",
+  "files": [
+    {
+      "path": "dist/index.html",
+      "bytes": 18056,
+      "gzip_bytes_estimate": 5377
+    },
+    {
+      "path": "assets/css/tokens.css",
+      "bytes": 671,
+      "gzip_bytes_estimate": 379
+    },
+    {
+      "path": "assets/css/site.css",
+      "bytes": 21458,
+      "gzip_bytes_estimate": 5476
+    },
+    {
+      "path": "assets/js/theme-init.js",
+      "bytes": 393,
+      "gzip_bytes_estimate": 282
+    },
+    {
+      "path": "assets/js/main.js",
+      "bytes": 9002,
+      "gzip_bytes_estimate": 3211
+    },
+    {
+      "path": "assets/images/logos/logo-exp-dark.svg",
+      "bytes": 7440,
+      "gzip_bytes_estimate": 3016
+    }
+  ],
+  "total_bytes": 57020,
+  "total_gzip_estimate": 17741
+}

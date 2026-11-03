@@ -1,0 +1,311 @@
+{
+  "lang": "en",
+  "title": "Polary — Data that guides, brands that lead",
+  "description": "Brand strategy, business systems and data management. Polary connects identity, technology and processes to help your business work and make decisions with clarity.",
+  "skip": "Skip to content",
+  "nav": [
+    "Solutions",
+    "Projects",
+    "Our approach",
+    "About"
+  ],
+  "talk": "Let’s talk",
+  "theme": "Toggle theme",
+  "menu": "Menu",
+  "home": "Home",
+  "back": "Back to home",
+  "eyebrow": "Strategy · Technology · Identity",
+  "hero": [
+    "Data that guides,",
+    "brands that",
+    "lead."
+  ],
+  "intro": "We connect brand strategy, systems and data to organize your operations and give direction to your next business decision.",
+  "projects": "Explore projects",
+  "scroll": "One direction. Connected possibilities.",
+  "diagram": [
+    "Brand",
+    "Technology",
+    "Data",
+    "Clarity to decide"
+  ],
+  "diagramLabel": "Brand, technology and data connected around a shared direction.",
+  "problemKicker": "Your business comes first",
+  "problemTitle": "When the parts connect, your business moves forward.",
+  "problemIntro": "Data in one spreadsheet. Processes in another tool. A brand that no longer reflects what you deliver. We look at the whole picture before proposing a solution.",
+  "solutionsKicker": "What we do",
+  "solutionsTitle": "Strategy put into practice.",
+  "solutionsIntro": "Three connected areas, shaped around what each business needs.",
+  "solutions": [
+    {
+      "title": "Strategy & brand",
+      "problem": "Your business has evolved. Has your message kept up?",
+      "text": "We organize positioning and identity so people understand what your company does and recognize its value.",
+      "items": [
+        "Positioning and visual identity",
+        "Websites and digital presence"
+      ],
+      "benefit": "A clearer, more consistent brand."
+    },
+    {
+      "title": "Systems & processes",
+      "problem": "Everyday work shouldn’t depend on repetitive tasks.",
+      "text": "We develop systems and connect operational workflows, with attention to the people using them, the business context and the information involved.",
+      "items": [
+        "Custom web systems",
+        "Process automation and integration"
+      ],
+      "benefit": "Less rework. More operational clarity."
+    },
+    {
+      "title": "Data & intelligence",
+      "problem": "Having information isn’t the same as being able to use it.",
+      "text": "We structure data and indicators to make business information easier to understand. We consider AI when there is a practical use and a verifiable goal.",
+      "items": [
+        "Data organization and visualization",
+        "Indicators to support decisions"
+      ],
+      "benefit": "Useful information for your next step."
+    }
+  ],
+  "solutionLink": "Discuss this need",
+  "caseKicker": "Featured project",
+  "caseTitle": "Technology that supports a human connection.",
+  "caseName": "Paulo Ramos Barbearia",
+  "caseSummary": "A case study on organizing appointments, customer records and business information while keeping the personal approach to service.",
+  "caseStatus": "Proposal in development",
+  "caseType": "Client case study · Final course project",
+  "caseLink": "Explore the case study",
+  "caseTags": [
+    "Diagnosis",
+    "Processes",
+    "Management system"
+  ],
+  "caseGraphic": [
+    "Personal service.",
+    "Connected operations."
+  ],
+  "caseGraphicCaption": "Project concept · not a system screenshot",
+  "caseFlow": [
+    "Schedule",
+    "Service",
+    "Management"
+  ],
+  "methodKicker": "Our approach",
+  "methodTitle": "Understand first. Then build.",
+  "methodIntro": "From the first conversation to delivery, every step needs a purpose and a clear path.",
+  "steps": [
+    [
+      "Listen & diagnose",
+      "We understand the routine, listen to people and identify the problem worth solving.",
+      "You receive: business priorities"
+    ],
+    [
+      "Plan & structure",
+      "We connect needs to the scope, user experience and validation criteria.",
+      "You receive: an agreed plan and scope"
+    ],
+    [
+      "Design & develop",
+      "We create the identity and digital solutions, reviewing decisions throughout development.",
+      "You receive: a solution to test"
+    ],
+    [
+      "Validate & evolve",
+      "We test, document and refine the delivery. Next steps follow the agreed scope.",
+      "You receive: delivery and guidance"
+    ]
+  ],
+  "aboutKicker": "About Polary",
+  "aboutTitle": "A reference point for finding your direction.",
+  "aboutText": [
+    "Polary takes its name from Polaris, the North Star: a reference for direction and constancy. We bring that idea to businesses by connecting the human side of a brand with the logic of data.",
+    "Founded by Gabriel Sales Camargo and Leonardo de Camargo Faria, Polary brings development and design together. Our mission is to turn complexity into clear, useful and efficient experiences."
+  ],
+  "values": [
+    [
+      "Strategy with purpose",
+      "Decisions grounded in context and intent."
+    ],
+    [
+      "Simplicity for the user",
+      "Technology should make everyday work easier."
+    ],
+    [
+      "Trust at every step",
+      "Security, responsibility and continuous improvement."
+    ]
+  ],
+  "team": "Two perspectives. One direction.",
+  "faqKicker": "Before we begin",
+  "faqTitle": "Questions that open possibilities.",
+  "faq": [
+    [
+      "How does a project start?",
+      "We start with a conversation about your business, everyday challenges and what needs to change. That diagnosis helps us define priorities and scope."
+    ],
+    [
+      "Do I need all your solutions?",
+      "No. Our areas complement one another, but the solution depends on your needs. A project can start with a specific problem and evolve as the context changes."
+    ],
+    [
+      "Does Polary work on visual identity and websites?",
+      "Yes. Positioning, visual identity and digital presence are part of Polary’s documented work, connected to strategy and technology."
+    ],
+    [
+      "How do you use artificial intelligence?",
+      "We consider AI to support information organization, automation and analysis. Its use depends on a concrete need, the available data and a way to validate the benefit."
+    ],
+    [
+      "How much does a project cost, and how long does it take?",
+      "Cost and timing depend on scope, deliverables and integrations. We prepare a proposal after understanding your needs and defining the work."
+    ]
+  ],
+  "contactKicker": "Your next step",
+  "contactTitle": "Where should we go from here?",
+  "contactIntro": "Tell us where your business is today and what needs to improve. We’ll start by understanding your situation.",
+  "emailLabel": "Prefer to email us directly?",
+  "formNote": "Fill this out to prepare a message in your email app. You review it and send it there.",
+  "labels": [
+    "Your name",
+    "Your email",
+    "What does your business need?",
+    "Tell us about the challenge"
+  ],
+  "optional": "optional",
+  "options": [
+    "Select an option",
+    "Strategy and brand",
+    "Website and digital presence",
+    "Management system",
+    "Automation and integrations",
+    "Data and indicators",
+    "Applied AI",
+    "I’m still exploring"
+  ],
+  "submit": "Prepare email",
+  "copy": "Copy message",
+  "nojs": "Use the direct email link if JavaScript is disabled.",
+  "privacyNote": "This site does not store the form fields.",
+  "footerLine": "Data that guides, brands that lead.",
+  "footerDescription": "Strategy, technology and identity moving in the same direction.",
+  "privacy": "Privacy",
+  "credits": "Project credits",
+  "top": "Back to top",
+  "rights": "Polary. All rights reserved.",
+  "privacyTitle": "Privacy and site use",
+  "privacyIntro": "How this version of the site handles information from your visit.",
+  "privacySections": [
+    [
+      "Contact form",
+      "The form prepares a message in your email app. This version does not send or store its fields on a Polary server. The message is only sent when you complete the process in your email app. Avoid including passwords or sensitive information."
+    ],
+    [
+      "Theme preference",
+      "Your browser may store your light or dark theme preference locally. You can remove it through your browser’s site data settings."
+    ],
+    [
+      "Measurement and hosting",
+      "This version does not embed external analytics or advertising services. Generic interactions may be recorded temporarily in page memory, without form fields. The hosting platform may process technical access logs under its own policies."
+    ],
+    [
+      "Contact",
+      "For questions about information sent by email, use the contact shown on this site. This page describes the behavior of this version and should be updated when new integrations are introduced."
+    ]
+  ],
+  "creditsTitle": "Credits and validation",
+  "creditsIntro": "Institutional website developed from the sources for Polary’s final course project.",
+  "creditsTeam": "Project team",
+  "testerLabel": "Human system testing",
+  "testerPending": "No human tester is identified in the supplied documents. Validation of the barbershop system is still pending.",
+  "creditsNote": "Technical checks for this website version are recorded in the delivery report. They do not replace acceptance testing of the system with the client.",
+  "notFound": "This page is off course.",
+  "notFoundText": "The address may have changed. Return to the homepage to find what you need.",
+  "casePageTitle": "Paulo Ramos — Case study | Polary",
+  "casePageDescription": "Diagnosis and a digital organization proposal for Paulo Ramos Barbearia: personal service, scheduling, management and data. A Polary final course project case study.",
+  "caseHero": "Organize the routine. Preserve the care.",
+  "caseIntro": "At Paulo Ramos Barbearia, personal service is part of the business. Polary’s proposal is to support that relationship with more organized operations.",
+  "caseFacts": [
+    [
+      "Client",
+      "Paulo Ramos Barbearia"
+    ],
+    [
+      "Location",
+      "Santa Bárbara d’Oeste · SP"
+    ],
+    [
+      "Context",
+      "Final course project case study"
+    ],
+    [
+      "Stage",
+      "Diagnosis and proposal"
+    ]
+  ],
+  "caseSections": [
+    [
+      "01 / Context",
+      "A business built on personal connection.",
+      "The interview describes a family learning tradition, service for different ages, reserved appointments according to individual needs and home visits when necessary. The barbershop also sells professional personal care products."
+    ],
+    [
+      "02 / Diagnosis",
+      "Information concentrated in one person.",
+      "The documents record a lack of management software, predominantly manual processes and limited infrastructure. Without consolidated sales, scheduling and inventory records, it is harder to monitor operations and set priorities."
+    ],
+    [
+      "03 / Direction",
+      "Organize without distancing people.",
+      "The proposal connects appointments, customers, services, products and financial information. The experience must stay simple and preserve human contact for people who find technology difficult to use."
+    ],
+    [
+      "04 / Validation",
+      "Expected benefits, with criteria for measurement.",
+      "Less rework, clearer scheduling and better financial monitoring are goals of the proposal. The supplied materials contain no implementation measurements proving fewer missed appointments, higher revenue or improved productivity."
+    ]
+  ],
+  "scopeTitle": "What the proposal covers",
+  "caseScope": [
+    [
+      "Scheduling and relationships",
+      "Centralize appointments and records while respecting the preferences needed for service."
+    ],
+    [
+      "Services and products",
+      "Organize records, sales and inventory movements."
+    ],
+    [
+      "Finance and data",
+      "Plan for expenses, salaries, cost centers and reports by date range."
+    ],
+    [
+      "Presence and continuity",
+      "Connect digital communication, user guidance, security and a backup strategy."
+    ]
+  ],
+  "evidenceTitle": "From diagnosis to evidence",
+  "evidenceHeads": [
+    "What we know",
+    "What still needs validation"
+  ],
+  "evidence": [
+    [
+      "Operations rely on direct contact and manual records.",
+      "Actual system workflows and testing with the owner."
+    ],
+    [
+      "The project specifies scheduling, management and reporting as a proposal.",
+      "Deployment, stability and backend functional requirements."
+    ],
+    [
+      "There are opportunities to organize service and data.",
+      "A baseline and indicators for appointments, retention, sales and inventory."
+    ]
+  ],
+  "sourcesTitle": "Documentary basis",
+  "sourcesText": "The interview with Paulo, final course project documentation, strategic diagnoses, market research, planning and system requirements. Infrastructure proposals and market hypotheses are presented as proposals, not as deployment results.",
+  "caseCta": "Does your business face a similar challenge?",
+  "caseCtaText": "Let’s understand your routine and identify a possible path forward.",
+  "returnProjects": "Back to projects"
+}
