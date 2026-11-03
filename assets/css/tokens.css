@@ -1,3 +1,0 @@
-/* Brand inherited from the supplied logos and existing site. */
-:root{--bg:#fafaf8;--surface:#f0f1ee;--panel:#fff;--text:#172537;--muted:#56616c;--line:#d7dcd9;--accent:#245de5;--accent-hover:#1948b9;--accent-soft:#e8eefc;--error:#b42318;--focus:#245de5;--header:#fafaf8;--on-accent:#fff;--radius:6px;--wrap:1280px;--s1:8px;--s2:16px;--s3:24px;--s4:32px;--s6:48px;--s8:64px;--s12:96px;color-scheme:light}
-html[data-theme=dark]{--bg:#0e141d;--surface:#151e2a;--panel:#192332;--text:#f0f3f9;--muted:#b0bdcf;--line:#344256;--accent:#9bb8ff;--accent-hover:#bfd1ff;--accent-soft:#1c3057;--error:#ffb4ab;--focus:#a9c2ff;--header:#0e141d;--on-accent:#101b30;color-scheme:dark}
